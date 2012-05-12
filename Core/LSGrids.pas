@@ -799,7 +799,8 @@ begin
     if (FixedCols < 1) and (FixedRows < 1) then
       FColumnsManager := False
     else
-      DoAutoSizeColumns;
+      if Columns.Count = 0 then
+        DoAutoSizeColumns;
     Repaint;
   end;
 end;
@@ -839,7 +840,7 @@ end;
 
 procedure TLSCustomStringGrid.Loaded;
 begin
-  if FColumnsManager then
+  if FColumnsManager and (Columns.Count = 0) then
     DoAutoSizeColumns;
   inherited;
 end;
@@ -884,10 +885,15 @@ begin
       begin
         BeginUpdate;
         try
-          if VForm.ColumnsCheckListBox.Checked[I] then
-            AutoAdjustColumn(Succ(I))
+          if Columns.Count > 0 then
+            Columns[I].Visible := VForm.ColumnsCheckListBox.Checked[I]
           else
-            ColWidths[Succ(I)] := 0;
+          begin
+            if VForm.ColumnsCheckListBox.Checked[I] then
+              AutoAdjustColumn(Succ(I))
+            else
+              ColWidths[Succ(I)] := 0;
+          end;
         finally
           EndUpdate;
         end;
@@ -910,7 +916,7 @@ end;
 
 procedure TLSCustomStringGrid.HeaderClick(AIsColumn: Boolean; AIndex: Integer);
 begin
-  if FSortable and AIsColumn and (AIndex >= FixedCols) and (RowCount > 3) then
+  if FSortable and AIsColumn and (AIndex >= FixedCols) and (RowCount > 2) then
   begin
     if FSortColIndex = AIndex then
     begin
