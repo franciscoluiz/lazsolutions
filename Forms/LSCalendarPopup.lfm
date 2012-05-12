@@ -1,0 +1,75 @@
+object LSCalendarPopupForm: TLSCalendarPopupForm
+  Left = 269
+  Height = 188
+  Top = 177
+  Width = 225
+  AutoSize = True
+  BorderIcons = [biMinimize, biMaximize]
+  BorderStyle = bsNone
+  ClientHeight = 188
+  ClientWidth = 225
+  OnClose = FormClose
+  OnDeactivate = FormDeactivate
+  PopupMode = pmAuto
+  ShowInTaskBar = stNever
+  LCLVersion = '0.9.30.2'
+  object DateCalendar: TCalendar
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 225
+    DateTime = 0
+    OnClick = DateCalendarClick
+    OnDblClick = DateCalendarDblClick
+    OnKeyDown = DateCalendarKeyDown
+    TabStop = True
+  end
+  object BottomPanel: TPanel
+    AnchorSideLeft.Control = DateCalendar
+    AnchorSideTop.Control = DateCalendar
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = DateCalendar
+    AnchorSideRight.Side = asrBottom
+    Left = 0
+    Height = 28
+    Top = 160
+    Width = 225
+    Anchors = [akTop, akLeft, akRight]
+    AutoSize = True
+    ClientHeight = 28
+    ClientWidth = 225
+    TabOrder = 1
+    object OKBitBtn: TBitBtn
+      AnchorSideTop.Control = CancelBitBtn
+      AnchorSideTop.Side = asrCenter
+      AnchorSideRight.Control = CancelBitBtn
+      Left = 132
+      Height = 26
+      Top = 0
+      Width = 45
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      BorderSpacing.Right = 2
+      Default = True
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = OKBitBtnClick
+      TabOrder = 0
+    end
+    object CancelBitBtn: TBitBtn
+      AnchorSideRight.Control = BottomPanel
+      AnchorSideRight.Side = asrBottom
+      Left = 179
+      Height = 26
+      Top = 0
+      Width = 45
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Cancel = True
+      Kind = bkCancel
+      ModalResult = 2
+      OnClick = CancelBitBtnClick
+      TabOrder = 1
+    end
+  end
+end

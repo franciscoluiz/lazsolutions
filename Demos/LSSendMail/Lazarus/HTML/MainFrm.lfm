@@ -1,0 +1,71 @@
+object MainForm: TMainForm
+  Left = 268
+  Height = 200
+  Top = 162
+  Width = 308
+  BorderStyle = bsDialog
+  Caption = 'MainForm'
+  ClientHeight = 200
+  ClientWidth = 308
+  OnShow = FormShow
+  Position = poDesktopCenter
+  LCLVersion = '0.9.31'
+  object MailBottomPanel: TPanel
+    Left = 0
+    Height = 38
+    Top = 162
+    Width = 308
+    Align = alBottom
+    ClientHeight = 38
+    ClientWidth = 308
+    TabOrder = 0
+    object CloseBitBtn: TBitBtn
+      Left = 233
+      Height = 36
+      Top = 1
+      Width = 74
+      Align = alRight
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Caption = 'Clos&e'
+      Kind = bkClose
+      TabOrder = 0
+    end
+    object SendBitBtn: TBitBtn
+      Left = 162
+      Height = 36
+      Top = 1
+      Width = 71
+      Align = alRight
+      Anchors = [akTop, akRight]
+      AutoSize = True
+      Caption = '&Send'
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = SendBitBtnClick
+      TabOrder = 1
+    end
+  end
+  object IpHtmlPanel: TIpHtmlPanel
+    Left = 0
+    Height = 162
+    Top = 0
+    Width = 308
+    Align = alClient
+    DataProvider = IpFileDataProvider
+    FixedTypeface = 'Courier New'
+    DefaultTypeFace = 'default'
+    DefaultFontSize = 12
+    FlagErrors = False
+    PrintSettings.MarginLeft = 0.5
+    PrintSettings.MarginTop = 0.5
+    PrintSettings.MarginRight = 0.5
+    PrintSettings.MarginBottom = 0.5
+    ShowHints = False
+    TabOrder = 1
+  end
+  object IpFileDataProvider: TIpFileDataProvider
+    left = 48
+    top = 24
+  end
+end

@@ -1,0 +1,44 @@
+object MainForm: TMainForm
+  Left = 239
+  Height = 240
+  Top = 147
+  Width = 320
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 320
+  Position = poDesktopCenter
+  LCLVersion = '0.9.31'
+  object LoadButton: TButton
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Owner
+    AnchorSideBottom.Side = asrBottom
+    Left = 264
+    Height = 25
+    Top = 211
+    Width = 52
+    Anchors = [akRight, akBottom]
+    AutoSize = True
+    BorderSpacing.Right = 4
+    BorderSpacing.Bottom = 4
+    Caption = '&Load'
+    Default = True
+    OnClick = LoadButtonClick
+    TabOrder = 0
+  end
+  object SaveButton: TButton
+    AnchorSideTop.Control = LoadButton
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = LoadButton
+    Left = 212
+    Height = 25
+    Top = 211
+    Width = 50
+    Anchors = [akTop, akRight]
+    AutoSize = True
+    BorderSpacing.Right = 2
+    Caption = '&Save'
+    OnClick = SaveButtonClick
+    TabOrder = 1
+  end
+end

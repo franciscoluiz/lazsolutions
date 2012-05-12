@@ -1,0 +1,4 @@
+$ su
+# cd /usr/lib
+# ln -s libcrypto.so.1.0.0 libcrypto.so
+# ln -s libssl.so.1.0.0 libssl.so

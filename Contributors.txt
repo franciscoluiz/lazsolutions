@@ -1,0 +1,17 @@
+﻿#The following people contributed to LazSolutions:
+
+Silvio Clecio
+Joao Morais
+Fernando Bizugo
+Rafael Elias
+Fabiano Almeida
+Sinisa Nicetin
+Luiz Americo Pereira Camara
+Flavio Etrusco
+Alex Pereira Silva
+Valmadson Santos
+Jean Patrick
+Danilo Gropelo
+Luciano Souza
+
+#and special thanks to the FPC-Lazarus team.

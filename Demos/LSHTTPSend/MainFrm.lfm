@@ -1,0 +1,509 @@
+object MainForm: TMainForm
+  Left = 349
+  Height = 300
+  Top = 179
+  Width = 400
+  Caption = 'MainForm'
+  ClientHeight = 300
+  ClientWidth = 400
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.4'
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 400
+    ActivePage = HTMLTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object HTMLTabSheet: TTabSheet
+      Caption = 'HTML'
+      ClientHeight = 272
+      ClientWidth = 392
+      object HTMLBottomPanel: TPanel
+        Left = 0
+        Height = 27
+        Top = 245
+        Width = 392
+        Align = alBottom
+        ClientHeight = 27
+        ClientWidth = 392
+        TabOrder = 2
+        object GetHTMLButton: TButton
+          Left = 311
+          Height = 25
+          Top = 1
+          Width = 80
+          Align = alRight
+          AutoSize = True
+          Caption = '&Get HTML'
+          OnClick = GetHTMLButtonClick
+          TabOrder = 0
+        end
+      end
+      object HTMLMemo: TMemo
+        Left = 0
+        Height = 222
+        Top = 23
+        Width = 392
+        Align = alClient
+        ScrollBars = ssAutoBoth
+        TabOrder = 1
+      end
+      object HostEdit: TEdit
+        Left = 0
+        Height = 23
+        Top = 0
+        Width = 392
+        Align = alTop
+        OnKeyPress = HostEditKeyPress
+        TabOrder = 0
+        Text = 'www.google.com'
+      end
+    end
+    object BinaryTabSheet: TTabSheet
+      Caption = 'Binary'
+      ClientHeight = 274
+      ClientWidth = 392
+      object GetBinaryButton: TButton
+        AnchorSideLeft.Control = BinaryTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = BinaryTabSheet
+        AnchorSideTop.Side = asrCenter
+        Left = 158
+        Height = 23
+        Top = 126
+        Width = 76
+        AutoSize = True
+        Caption = '&Get binary'
+        OnClick = GetBinaryButtonClick
+        TabOrder = 0
+      end
+    end
+    object PictureTabSheet: TTabSheet
+      Caption = 'Picture'
+      ClientHeight = 272
+      ClientWidth = 392
+      object PictureScrollBox: TScrollBox
+        Left = 0
+        Height = 245
+        Top = 0
+        Width = 392
+        Align = alClient
+        ClientHeight = 241
+        ClientWidth = 388
+        TabOrder = 0
+        object PictureImage: TImage
+          Left = 0
+          Height = 48
+          Top = 0
+          Width = 48
+          AutoSize = True
+        end
+      end
+      object PictureBottomPanel: TPanel
+        Left = 0
+        Height = 27
+        Top = 245
+        Width = 392
+        Align = alBottom
+        ClientHeight = 27
+        ClientWidth = 392
+        TabOrder = 1
+        object GetPictureButton: TButton
+          Left = 307
+          Height = 25
+          Top = 1
+          Width = 84
+          Align = alRight
+          AutoSize = True
+          Caption = '&Get picture'
+          OnClick = GetPictureButtonClick
+          TabOrder = 0
+        end
+        object ImagePropLabel: TLabel
+          Left = 1
+          Height = 25
+          Top = 1
+          Width = 306
+          Align = alClient
+          AutoSize = False
+          Font.Style = [fsBold]
+          Layout = tlCenter
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+    end
+    object PostURLTabSheet: TTabSheet
+      Caption = 'PostURL'
+      ClientHeight = 272
+      ClientWidth = 392
+      object LongURLLabel: TLabel
+        AnchorSideLeft.Control = PostURLTabSheet
+        AnchorSideTop.Control = PostURLTabSheet
+        Left = 20
+        Height = 14
+        Top = 30
+        Width = 24
+        BorderSpacing.Left = 20
+        BorderSpacing.Top = 30
+        Caption = 'URL:'
+        ParentColor = False
+      end
+      object LongURLEdit: TEdit
+        AnchorSideLeft.Control = LongURLLabel
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = LongURLLabel
+        AnchorSideTop.Side = asrCenter
+        Left = 46
+        Height = 21
+        Top = 27
+        Width = 224
+        BorderSpacing.Left = 2
+        TabOrder = 0
+        Text = 'https://github.com/silvioprog/lazsolutions'
+      end
+      object ShortenButton: TButton
+        AnchorSideLeft.Control = LongURLEdit
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = LongURLEdit
+        AnchorSideTop.Side = asrCenter
+        Left = 272
+        Height = 23
+        Top = 26
+        Width = 64
+        AutoSize = True
+        BorderSpacing.Left = 2
+        Caption = '&Shorten'
+        Default = True
+        OnClick = ShortenButtonClick
+        TabOrder = 1
+      end
+      object PostURLResultMemo: TMemo
+        AnchorSideLeft.Control = LongURLLabel
+        AnchorSideTop.Control = LongURLEdit
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = ShortenButton
+        AnchorSideRight.Side = asrBottom
+        Left = 20
+        Height = 114
+        Top = 58
+        Width = 316
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 10
+        TabOrder = 2
+      end
+    end
+    object PostFileTabSheet: TTabSheet
+      Caption = 'PostFile'
+      ClientHeight = 272
+      ClientWidth = 392
+      object ValidatePostFileButton: TButton
+        AnchorSideLeft.Control = PostFileTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = PostFileTabSheet
+        AnchorSideTop.Side = asrCenter
+        Left = 109
+        Height = 25
+        Top = 124
+        Width = 175
+        AutoSize = True
+        Caption = 'Validade "PostFileTest.html"'
+        OnClick = ValidatePostFileButtonClick
+        TabOrder = 0
+      end
+    end
+    object GetPartTabSheet: TTabSheet
+      Caption = 'GetPart'
+      ClientHeight = 272
+      ClientWidth = 392
+      object TimeOfBrazilLabel: TLabel
+        AnchorSideLeft.Control = GetPartButton
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideBottom.Control = GetPartButton
+        Left = 141
+        Height = 16
+        Top = 108
+        Width = 111
+        Anchors = [akLeft, akBottom]
+        Caption = 'Official time of Brazil'
+        ParentColor = False
+      end
+      object GetPartButton: TButton
+        AnchorSideLeft.Control = GetPartTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = GetPartTabSheet
+        AnchorSideTop.Side = asrCenter
+        Left = 159
+        Height = 25
+        Top = 124
+        Width = 75
+        Caption = '&Get'
+        OnClick = GetPartButtonClick
+        TabOrder = 0
+      end
+    end
+    object DownloadTabSheet: TTabSheet
+      Caption = 'Download'
+      ClientHeight = 272
+      ClientWidth = 392
+      object DownloadProgressBar: TProgressBar
+        Left = 0
+        Height = 16
+        Top = 256
+        Width = 392
+        Align = alBottom
+        TabOrder = 1
+      end
+      object DownloadBtnsPanel: TPanel
+        Left = 0
+        Height = 50
+        Top = 0
+        Width = 392
+        Align = alTop
+        ClientHeight = 50
+        ClientWidth = 392
+        TabOrder = 0
+        object StartDownloadButton: TButton
+          AnchorSideLeft.Control = DownloadBtnsPanel
+          AnchorSideTop.Control = DownloadBtnsPanel
+          AnchorSideTop.Side = asrCenter
+          Left = 9
+          Height = 25
+          Top = 13
+          Width = 50
+          AutoSize = True
+          BorderSpacing.Left = 8
+          Caption = '&Start'
+          OnClick = StartDownloadButtonClick
+          TabOrder = 0
+        end
+        object PauseDownloadButton: TButton
+          AnchorSideLeft.Control = StartDownloadButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = StartDownloadButton
+          AnchorSideTop.Side = asrCenter
+          Left = 63
+          Height = 25
+          Top = 13
+          Width = 57
+          AutoSize = True
+          BorderSpacing.Left = 4
+          Caption = '&Pause'
+          Enabled = False
+          OnClick = PauseDownloadButtonClick
+          TabOrder = 1
+        end
+        object CancelDownloadButton: TButton
+          AnchorSideLeft.Control = PauseDownloadButton
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = PauseDownloadButton
+          AnchorSideTop.Side = asrCenter
+          Left = 124
+          Height = 25
+          Top = 13
+          Width = 62
+          AutoSize = True
+          BorderSpacing.Left = 4
+          Caption = '&Cancel'
+          Enabled = False
+          OnClick = CancelDownloadButtonClick
+          TabOrder = 2
+        end
+      end
+      object DownloadLogMemo: TMemo
+        Left = 0
+        Height = 206
+        Top = 50
+        Width = 392
+        Align = alClient
+        Color = 12910591
+        Font.Style = [fsItalic]
+        ParentFont = False
+        ScrollBars = ssAutoBoth
+        TabOrder = 2
+      end
+    end
+    object CurrencyConverterTabSheet: TTabSheet
+      Caption = 'Currency converter'
+      ClientHeight = 272
+      ClientWidth = 392
+      object CurrencyValueLabel: TLabel
+        AnchorSideTop.Control = CurrencyValueEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = CurrencyValueEdit
+        Left = 33
+        Height = 16
+        Top = 74
+        Width = 30
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 4
+        Caption = '&Value'
+        FocusControl = CurrencyValueEdit
+        ParentColor = False
+      end
+      object CurrencyValueEdit: TEdit
+        AnchorSideLeft.Control = CurrencyFromComboBox
+        AnchorSideRight.Control = CurrencyFromComboBox
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = CurrencyFromComboBox
+        Left = 67
+        Height = 23
+        Top = 71
+        Width = 258
+        Alignment = taRightJustify
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Bottom = 4
+        Enabled = False
+        OnKeyPress = CurrencyValueEditKeyPress
+        TabOrder = 0
+        Text = '1'
+      end
+      object CurrencyFromLabel: TLabel
+        AnchorSideTop.Control = CurrencyFromComboBox
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = CurrencyFromComboBox
+        Left = 34
+        Height = 16
+        Top = 101
+        Width = 29
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 4
+        Caption = '&From'
+        FocusControl = CurrencyFromComboBox
+        ParentColor = False
+      end
+      object CurrencyFromComboBox: TComboBox
+        AnchorSideLeft.Control = CurrencyToComboBox
+        AnchorSideRight.Control = CurrencyToComboBox
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = CurrencyToComboBox
+        Left = 67
+        Height = 23
+        Top = 98
+        Width = 258
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Bottom = 4
+        Enabled = False
+        ItemHeight = 15
+        Style = csDropDownList
+        TabOrder = 1
+      end
+      object CurrencyToLabel: TLabel
+        AnchorSideTop.Control = CurrencyToComboBox
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = CurrencyToComboBox
+        Left = 48
+        Height = 16
+        Top = 128
+        Width = 15
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 4
+        Caption = '&To'
+        FocusControl = CurrencyToComboBox
+        ParentColor = False
+      end
+      object CurrencyToComboBox: TComboBox
+        AnchorSideLeft.Control = CurrencyConverterTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = CurrencyConverterTabSheet
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Side = asrBottom
+        Left = 67
+        Height = 23
+        Top = 125
+        Width = 258
+        Enabled = False
+        ItemHeight = 15
+        Style = csDropDownList
+        TabOrder = 2
+      end
+      object CurrencyConvertButton: TButton
+        AnchorSideLeft.Control = CurrencyToComboBox
+        AnchorSideTop.Control = CurrencyToComboBox
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = CurrencyToComboBox
+        AnchorSideRight.Side = asrBottom
+        Left = 67
+        Height = 25
+        Top = 152
+        Width = 258
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = True
+        BorderSpacing.Top = 4
+        Caption = '&Load items'
+        Default = True
+        OnClick = CurrencyConvertButtonClick
+        TabOrder = 3
+      end
+      object CurrencyResultLabel: TLabel
+        AnchorSideLeft.Control = CurrencyConvertButton
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = CurrencyConvertButton
+        AnchorSideTop.Side = asrBottom
+        Left = 196
+        Height = 1
+        Top = 187
+        Width = 1
+        BorderSpacing.Top = 10
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+    object JSONTabSheet: TTabSheet
+      Caption = 'JSON'
+      ClientHeight = 272
+      ClientWidth = 392
+      object JSONIdLabel: TLabel
+        AnchorSideLeft.Control = JSONTabSheet
+        AnchorSideLeft.Side = asrCenter
+        Left = 189
+        Height = 16
+        Top = 88
+        Width = 15
+        Caption = 'ID:'
+        ParentColor = False
+      end
+      object JSONNameLabel: TLabel
+        AnchorSideLeft.Control = JSONTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = JSONIdLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 178
+        Height = 16
+        Top = 114
+        Width = 36
+        BorderSpacing.Top = 10
+        Caption = 'Name:'
+        ParentColor = False
+        ShowAccelChar = False
+      end
+      object JSONGetButton: TButton
+        AnchorSideLeft.Control = JSONTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = JSONNameLabel
+        AnchorSideTop.Side = asrBottom
+        Left = 174
+        Height = 25
+        Top = 150
+        Width = 44
+        AutoSize = True
+        BorderSpacing.Top = 20
+        Caption = 'Get'
+        OnClick = JSONGetButtonClick
+        TabOrder = 0
+      end
+    end
+  end
+  object DownloadTimer: TTimer
+    Enabled = False
+    OnTimer = DownloadTimerTimer
+    left = 32
+    top = 32
+  end
+end

@@ -1,0 +1,367 @@
+object MainForm: TMainForm
+  Left = 267
+  Height = 516
+  Top = 82
+  Width = 446
+  Caption = 'MainForm'
+  ClientHeight = 516
+  ClientWidth = 446
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  Position = poDesktopCenter
+  LCLVersion = '0.9.29'
+  object TopPanel: TPanel
+    Left = 0
+    Height = 306
+    Top = 0
+    Width = 446
+    Align = alTop
+    AutoSize = True
+    ClientHeight = 306
+    ClientWidth = 446
+    TabOrder = 0
+    object HeaderPanel: TPanel
+      Left = 1
+      Height = 175
+      Top = 1
+      Width = 444
+      Align = alTop
+      ClientHeight = 175
+      ClientWidth = 444
+      TabOrder = 0
+      object FromLabel: TLabel
+        Left = 23
+        Height = 16
+        Top = 10
+        Width = 29
+        Caption = '&From'
+        FocusControl = FromEdit
+        ParentColor = False
+      end
+      object ToLabel: TLabel
+        Left = 42
+        Height = 16
+        Top = 42
+        Width = 15
+        Caption = '&To'
+        FocusControl = ToEdit
+        ParentColor = False
+      end
+      object CCLabel: TLabel
+        Left = 38
+        Height = 16
+        Top = 74
+        Width = 17
+        Caption = '&CC'
+        FocusControl = CCEdit
+        ParentColor = False
+      end
+      object PriorityLabel: TLabel
+        Left = 9
+        Height = 16
+        Top = 140
+        Width = 39
+        Caption = '&Priority'
+        FocusControl = PriorityComboBox
+        ParentColor = False
+      end
+      object FromEdit: TEdit
+        Left = 69
+        Height = 23
+        Top = 6
+        Width = 368
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 0
+        Text = 'Your e-mail or name'
+      end
+      object ToEdit: TEdit
+        Left = 69
+        Height = 23
+        Top = 38
+        Width = 368
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 1
+        Text = 'example1@gmail.com;example2@gmail.com'
+      end
+      object CCEdit: TEdit
+        Left = 69
+        Height = 23
+        Top = 70
+        Width = 368
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 2
+        Text = 'example1@gmail.com;example2@gmail.com'
+      end
+      object PriorityComboBox: TComboBox
+        Left = 69
+        Height = 23
+        Top = 135
+        Width = 108
+        ItemHeight = 15
+        ItemIndex = 0
+        Items.Strings = (
+          'Unknow'
+          'Low'
+          'Normal'
+          'High'
+        )
+        Style = csDropDownList
+        TabOrder = 4
+        Text = 'Unknow'
+      end
+      object ConfirmReadingCheckBox: TCheckBox
+        Left = 191
+        Height = 19
+        Top = 139
+        Width = 107
+        Caption = 'Confirm &reading'
+        Color = clBtnFace
+        ParentColor = False
+        TabOrder = 5
+      end
+      object BCCLabel: TLabel
+        Left = 29
+        Height = 16
+        Top = 107
+        Width = 24
+        Caption = '&BCC'
+        FocusControl = BCCEdit
+        ParentColor = False
+      end
+      object BCCEdit: TEdit
+        Left = 69
+        Height = 23
+        Top = 102
+        Width = 368
+        Anchors = [akTop, akLeft, akRight]
+        TabOrder = 3
+        Text = 'example1@gmail.com;example2@gmail.com'
+      end
+    end
+    object SubjectPanel: TPanel
+      Left = 1
+      Height = 41
+      Top = 176
+      Width = 444
+      Align = alTop
+      ClientHeight = 41
+      ClientWidth = 444
+      TabOrder = 1
+      object SubjectLabel: TLabel
+        Left = 8
+        Height = 16
+        Top = 11
+        Width = 40
+        Caption = '&Subject'
+        FocusControl = SubjectEdit
+        ParentColor = False
+      end
+      object SubjectEdit: TEdit
+        Left = 69
+        Height = 23
+        Top = 6
+        Width = 368
+        TabOrder = 0
+        Text = 'Write here your subject.'
+      end
+    end
+    object AttachedPanel: TPanel
+      Left = 1
+      Height = 88
+      Top = 217
+      Width = 444
+      Align = alTop
+      ClientHeight = 88
+      ClientWidth = 444
+      TabOrder = 2
+      object AttachedLabel: TLabel
+        Left = 1
+        Height = 16
+        Top = 1
+        Width = 442
+        Align = alTop
+        Caption = '&Attached files (can use more than one, duble click to add)'
+        FocusControl = AttachedListBox
+        ParentColor = False
+      end
+      object AttachedListBox: TListBox
+        Left = 1
+        Height = 70
+        Top = 17
+        Width = 442
+        Align = alClient
+        ItemHeight = 0
+        OnDblClick = AttachedListBoxDblClick
+        PopupMenu = AttachedPopupMenu
+        TabOrder = 0
+      end
+    end
+  end
+  object AttachedSplitter: TSplitter
+    Cursor = crVSplit
+    Left = 0
+    Height = 5
+    Top = 306
+    Width = 446
+    Align = alTop
+    ResizeAnchor = akTop
+  end
+  object MailBottomPanel: TPanel
+    Left = 0
+    Height = 38
+    Top = 478
+    Width = 446
+    Align = alBottom
+    ClientHeight = 38
+    ClientWidth = 446
+    TabOrder = 2
+    object CloseBitBtn: TBitBtn
+      Left = 367
+      Height = 30
+      Top = 4
+      Width = 75
+      Align = alRight
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      Caption = 'Clos&e'
+      Kind = bkClose
+      TabOrder = 0
+    end
+    object SendBitBtn: TBitBtn
+      Left = 211
+      Height = 30
+      Top = 4
+      Width = 75
+      Align = alRight
+      Anchors = [akTop, akRight]
+      BorderSpacing.Top = 3
+      BorderSpacing.Right = 3
+      BorderSpacing.Bottom = 3
+      Caption = '&Send'
+      Kind = bkOK
+      ModalResult = 1
+      OnClick = SendBitBtnClick
+      TabOrder = 2
+    end
+    object CancelBitBtn: TBitBtn
+      Left = 289
+      Height = 30
+      Top = 4
+      Width = 75
+      Align = alRight
+      BorderSpacing.Around = 3
+      Caption = '&Cancel'
+      Enabled = False
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000064000000640000000000000000000000FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF003F3DED413B38EB08FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00211FE3081E1CE241FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF004A47F0414F4CF2FF403EEDFD3C39EB08FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF002725E5082422E4FC312FEAFF1F1DE241FFFFFF00FFFFFF00FFFFFF005451
+        F3415856F5FF6361FAFF5855F6FF413FEDFC3D3AEC08FFFFFF00FFFFFF00302D
+        E7082C2AE6FC413FF1FF4C4AF6FF312FEAFF1F1DE241FFFFFF00FFFFFF005956
+        F52B5B58F6FF6562FAFF7170FFFF5956F6FF4240EEFC3E3BEC083937EB083532
+        E9FC4745F2FF6362FFFF4A48F4FF2F2DE9FF2220E32BFFFFFF00FFFFFF00FFFF
+        FF005A57F52B5B59F6FF6663FAFF7471FFFF5A58F6FF4341EEFC3E3CECFD504D
+        F4FF6867FFFF504EF5FF3634EBFF2A27E52BFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF005B58F62B5C5AF6FF6764FAFF7472FFFF7370FFFF706EFFFF6E6C
+        FFFF5755F7FF3F3DEEFF3230E82BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF005C59F62B5D5BF7FF7976FFFF5956FFFF5754FFFF7270
+        FFFF4846F0FF3C39EB2BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00615EF8085D5AF6FD7D79FFFF5E5BFFFF5B58FFFF7674
+        FFFF4643EFFD413FED08FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF006967FB086663F9FC706DFBFF807EFFFF7E7BFFFF7C79FFFF7977
+        FFFF5E5CF7FF4744EFFC4240EE08FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00716EFD086E6BFCFC7774FDFF8682FFFF7673FCFF6462F8FF605DF7FF6D6A
+        FAFF7B79FFFF605DF7FF4845EFFC4341EE08FFFFFF00FFFFFF00FFFFFF007673
+        FF087471FEFD7D7AFEFF8A87FFFF7C79FDFF6C69FBFF6361F92B5F5CF72B615E
+        F8FF6E6CFAFF7D7AFFFF615FF7FF4946F0FC4441EE05FFFFFF00FFFFFF007774
+        FF1F7A77FFFF817EFFFF817EFEFF7471FDFF6C69FB2BFFFFFF00FFFFFF00605D
+        F72B625FF8FF6F6DFBFF7E7CFFFF625FF8FF4A47F06F4542EE02FFFFFF00FFFF
+        FF007774FF1F7A77FFFF7976FEFF726FFD2BFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00615EF82B6461F8FF6A68F9FF5451F3A84F4DF229FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF007774FF1F7774FF2BFFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00625FF82B5D5BF76F5956F53EFFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF006360F80AFFFFFF00FFFFFF00FFFFFF00
+      }
+      OnClick = CancelBitBtnClick
+      TabOrder = 1
+    end
+    object StatusLabel: TLabel
+      Left = 11
+      Height = 36
+      Top = 1
+      Width = 1
+      Align = alLeft
+      BorderSpacing.Left = 10
+      Font.Color = clGreen
+      Font.Style = [fsBold, fsItalic]
+      Layout = tlCenter
+      ParentColor = False
+      ParentFont = False
+      Visible = False
+    end
+  end
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 167
+    Top = 311
+    Width = 446
+    ActivePage = MailTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 3
+    object MailTabSheet: TTabSheet
+      Caption = 'Mail'
+      ClientHeight = 139
+      ClientWidth = 438
+      object MessagePanel: TPanel
+        Left = 0
+        Height = 139
+        Top = 0
+        Width = 438
+        Align = alClient
+        ClientHeight = 139
+        ClientWidth = 438
+        TabOrder = 0
+        object MessageMemo: TMemo
+          Left = 1
+          Height = 137
+          Top = 1
+          Width = 436
+          Align = alClient
+          Lines.Strings = (
+            'Hi,'
+            ''
+            'Write here the content of your email.'
+            ''
+            'Regards,'
+            '   - LazSolutions Team -'
+          )
+          TabOrder = 0
+        end
+      end
+    end
+  end
+  object AttachedPopupMenu: TPopupMenu
+    left = 64
+    top = 208
+    object AddAttachedMenuItem: TMenuItem
+      Caption = '&Add'
+      OnClick = AddAttachedMenuItemClick
+    end
+    object N1: TMenuItem
+      Caption = '-'
+    end
+    object RemoveAttachedMenuItem: TMenuItem
+      Caption = '&Remove'
+      OnClick = RemoveAttachedMenuItemClick
+    end
+  end
+end

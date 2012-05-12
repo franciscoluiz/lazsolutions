@@ -1,0 +1,65 @@
+object LSGridsColumnsManagerForm: TLSGridsColumnsManagerForm
+  Left = 268
+  Height = 160
+  Top = 173
+  Width = 140
+  BorderStyle = bsToolWindow
+  ClientHeight = 160
+  ClientWidth = 140
+  ShowInTaskBar = stNever
+  LCLVersion = '0.9.30'
+  object ClientPanel: TPanel
+    Left = 0
+    Height = 160
+    Top = 0
+    Width = 140
+    Align = alClient
+    ClientHeight = 160
+    ClientWidth = 140
+    TabOrder = 0
+    object ColumnsCheckListBox: TCheckListBox
+      Left = 1
+      Height = 148
+      Top = 1
+      Width = 138
+      Align = alClient
+      BorderStyle = bsNone
+      ItemHeight = 0
+      TabOrder = 0
+    end
+    object BottomPanel: TPanel
+      Left = 1
+      Height = 10
+      Top = 149
+      Width = 138
+      Align = alBottom
+      AutoSize = True
+      BevelOuter = bvNone
+      ClientHeight = 10
+      ClientWidth = 138
+      TabOrder = 1
+      object OKButton: TButton
+        Left = 86
+        Height = 10
+        Top = 0
+        Width = 26
+        Align = alRight
+        AutoSize = True
+        Default = True
+        ModalResult = 1
+        TabOrder = 0
+      end
+      object CancelButton: TButton
+        Left = 112
+        Height = 10
+        Top = 0
+        Width = 26
+        Align = alRight
+        AutoSize = True
+        Cancel = True
+        ModalResult = 2
+        TabOrder = 1
+      end
+    end
+  end
+end

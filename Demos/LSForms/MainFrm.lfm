@@ -1,0 +1,88 @@
+object MainForm: TMainForm
+  Left = 263
+  Height = 280
+  Top = 154
+  Width = 460
+  Caption = 'MainForm'
+  ClientHeight = 280
+  ClientWidth = 460
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object Edit1: TEdit
+    Left = 8
+    Height = 23
+    Top = 8
+    Width = 80
+    TabOrder = 0
+    Text = 'Edit1'
+  end
+  object Memo1: TMemo
+    Left = 8
+    Height = 90
+    Top = 56
+    Width = 150
+    Lines.Strings = (
+      'Memo1'
+    )
+    TabOrder = 1
+  end
+  object Panel1: TPanel
+    Left = 200
+    Height = 216
+    Top = 24
+    Width = 210
+    ClientHeight = 216
+    ClientWidth = 210
+    TabOrder = 4
+    object Edit2: TEdit
+      Left = 9
+      Height = 23
+      Top = 16
+      Width = 80
+      TabOrder = 0
+      Text = 'Edit2'
+    end
+    object Panel2: TPanel
+      Left = 17
+      Height = 138
+      Top = 56
+      Width = 170
+      ClientHeight = 138
+      ClientWidth = 170
+      TabOrder = 1
+      object Button2: TButton
+        Left = 14
+        Height = 25
+        Top = 13
+        Width = 75
+        Caption = 'Button2'
+        TabOrder = 0
+      end
+      object Edit3: TEdit
+        Left = 14
+        Height = 23
+        Top = 56
+        Width = 80
+        TabOrder = 1
+        Text = 'Edit3'
+      end
+    end
+  end
+  object CheckBox1: TCheckBox
+    Left = 10
+    Height = 19
+    Top = 168
+    Width = 78
+    Caption = 'CheckBox1'
+    TabOrder = 2
+  end
+  object RadioButton1: TRadioButton
+    Left = 10
+    Height = 19
+    Top = 208
+    Width = 92
+    Caption = 'RadioButton1'
+    TabOrder = 3
+    TabStop = True
+  end
+end

@@ -1,0 +1,133 @@
+object MainForm: TMainForm
+  Left = 239
+  Height = 240
+  Top = 150
+  Width = 320
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 320
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 320
+    ActivePage = CompressStringTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object CompressStringTabSheet: TTabSheet
+      Caption = 'Compress string'
+      ClientHeight = 212
+      ClientWidth = 312
+      object InputStringEdit: TEdit
+        AnchorSideLeft.Control = ResultEdit
+        AnchorSideRight.Control = ResultEdit
+        AnchorSideRight.Side = asrBottom
+        AnchorSideBottom.Control = CompressStringButton
+        Left = 24
+        Height = 23
+        Top = 43
+        Width = 264
+        Anchors = [akLeft, akRight, akBottom]
+        BorderSpacing.Bottom = 2
+        TabOrder = 0
+        Text = 'Put string...'
+      end
+      object CompressStringButton: TButton
+        AnchorSideLeft.Control = ResultEdit
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideBottom.Control = ResultEdit
+        Left = 117
+        Height = 25
+        Top = 68
+        Width = 79
+        Anchors = [akLeft, akBottom]
+        AutoSize = True
+        BorderSpacing.Bottom = 2
+        Caption = '&Compress'
+        Default = True
+        OnClick = CompressStringButtonClick
+        TabOrder = 1
+      end
+      object ResultEdit: TEdit
+        AnchorSideLeft.Control = CompressStringTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = CompressStringTabSheet
+        AnchorSideTop.Side = asrCenter
+        Left = 24
+        Height = 23
+        Top = 95
+        Width = 264
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 2
+      end
+      object UnCompressStringButton: TButton
+        AnchorSideLeft.Control = ResultEdit
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = ResultEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 109
+        Height = 25
+        Top = 120
+        Width = 94
+        AutoSize = True
+        BorderSpacing.Top = 2
+        Caption = '&UnCompress'
+        OnClick = UnCompressStringButtonClick
+        TabOrder = 3
+      end
+      object OutputStringEdit: TEdit
+        AnchorSideLeft.Control = ResultEdit
+        AnchorSideTop.Control = UnCompressStringButton
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = ResultEdit
+        AnchorSideRight.Side = asrBottom
+        Left = 24
+        Height = 23
+        Top = 147
+        Width = 264
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 2
+        Color = clBtnFace
+        ReadOnly = True
+        TabOrder = 4
+      end
+    end
+    object CompressFileTabSheet: TTabSheet
+      Caption = 'Compress file'
+      ClientHeight = 212
+      ClientWidth = 312
+      object CompressFileButton: TButton
+        AnchorSideLeft.Control = CompressFileTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Side = asrCenter
+        Left = 107
+        Height = 25
+        Top = 72
+        Width = 98
+        Anchors = [akLeft]
+        AutoSize = True
+        Caption = '&Compress file'
+        OnClick = CompressFileButtonClick
+        TabOrder = 0
+      end
+      object UnCompressFileButton: TButton
+        AnchorSideLeft.Control = CompressFileButton
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = CompressFileButton
+        AnchorSideTop.Side = asrBottom
+        Left = 100
+        Height = 25
+        Top = 97
+        Width = 113
+        AutoSize = True
+        Caption = '&UnCompress file'
+        OnClick = UnCompressFileButtonClick
+        TabOrder = 1
+      end
+    end
+  end
+end

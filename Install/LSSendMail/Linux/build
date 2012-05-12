@@ -1,0 +1,1 @@
+$ dpkg-deb -b '/YOUR_PATH/LSSendMail/Install/Linux/DEB' '/YOUR_PATH/LSSendMail/Install/Linux'

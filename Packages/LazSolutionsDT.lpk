@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="LazSolutionsDT"/>
+    <AddToProjectUsesSection Value="True"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="10"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\Core"/>
+        <OtherUnitFiles Value="..\Forms;..\Core"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <CodeGeneration>
+        <Optimizations>
+          <OptimizationLevel Value="2"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Other>
+        <CompilerMessages>
+          <UseMsgFile Value="True"/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="LazSolutions DesignTime package."/>
+    <License Value="See the file LICENSE.txt, included in this distribution, for details about the copyright."/>
+    <Version Minor="2" Release="9" Build="21"/>
+    <Files Count="27">
+      <Item1>
+        <Filename Value="..\Core\LSAllReg.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="LSAllReg"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\Core\LSAllReg.lrs"/>
+        <Type Value="LRS"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\Core\LSCommonIntf.pas"/>
+        <UnitName Value="LSCommonIntf"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\Core\LSComponentEditors.pas"/>
+        <UnitName Value="LSComponentEditors"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\Core\LSControls.pas"/>
+        <UnitName Value="LSControls"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\Core\LSDialogs.pas"/>
+        <UnitName Value="LSDialogs"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\Core\LSException.pas"/>
+        <UnitName Value="LSException"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\Core\LSForms.pas"/>
+        <UnitName Value="LSForms"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\Core\LSGraphics.pas"/>
+        <UnitName Value="LSGraphics"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\Core\LSGrids.pas"/>
+        <UnitName Value="LSGrids"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\Core\LSGrigMedia.lrs"/>
+        <Type Value="LRS"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\Core\LSJSONPropStorage.pas"/>
+        <UnitName Value="LSJSONPropStorage"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\Core\LSPackageIntf.pas"/>
+        <UnitName Value="LSPackageIntf"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\Core\LSPropEdits.pas"/>
+        <UnitName Value="LSPropEdits"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\Core\LSRegExList.pas"/>
+        <UnitName Value="LSRegExList"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\Forms\LSAboutFrm.pas"/>
+        <UnitName Value="LSAboutFrm"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\Forms\LSAboutFrm.lfm"/>
+        <Type Value="LFM"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\Forms\LSCalendarPopup.pas"/>
+        <UnitName Value="LSCalendarPopup"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\Forms\LSCalendarPopup.lfm"/>
+        <Type Value="LFM"/>
+      </Item19>
+      <Item20>
+        <Filename Value="..\Forms\LSExceptionDlg.pas"/>
+        <UnitName Value="LSExceptionDlg"/>
+      </Item20>
+      <Item21>
+        <Filename Value="..\Forms\LSExceptionDlg.lfm"/>
+        <Type Value="LFM"/>
+      </Item21>
+      <Item22>
+        <Filename Value="..\Forms\LSGridsColumnsManagerFrm.pas"/>
+        <UnitName Value="LSGridsColumnsManagerFrm"/>
+      </Item22>
+      <Item23>
+        <Filename Value="..\Forms\LSGridsColumnsManagerFrm.lfm"/>
+        <Type Value="LFM"/>
+      </Item23>
+      <Item24>
+        <Filename Value="..\Forms\LSLookupDlg.pas"/>
+        <UnitName Value="LSLookupDlg"/>
+      </Item24>
+      <Item25>
+        <Filename Value="..\Forms\LSLookupDlg.lfm"/>
+        <Type Value="LFM"/>
+      </Item25>
+      <Item26>
+        <Filename Value="..\Forms\LSRegExPropertyEditorFrm.pas"/>
+        <UnitName Value="LSRegExPropertyEditorFrm"/>
+      </Item26>
+      <Item27>
+        <Filename Value="..\Forms\LSRegExPropertyEditorFrm.lfm"/>
+        <Type Value="LFM"/>
+      </Item27>
+    </Files>
+    <Type Value="DesignTime"/>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="IDEIntf"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="LazSolutionsRT"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>

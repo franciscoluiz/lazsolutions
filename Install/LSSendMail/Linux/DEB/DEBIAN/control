@@ -1,0 +1,13 @@
+Package: lssendmail
+Version: 1.5
+Architecture: i386
+Maintainer: Silvio Clecio
+Installed-Size: 485
+Depends: libssl-dev, libc6
+Section: Email
+Priority: optional
+Homepage: http://code.google.com/p/lazsolutions
+Description: LSSendMail is a module to send e-mail.
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.

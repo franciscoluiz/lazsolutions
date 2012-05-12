@@ -1,0 +1,109 @@
+object MainForm: TMainForm
+  Left = 314
+  Height = 240
+  Top = 152
+  Width = 313
+  BorderStyle = bsSingle
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 313
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 240
+    Top = 0
+    Width = 313
+    ActivePage = ValidateIPTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object ValidateIPTabSheet: TTabSheet
+      Caption = 'Validate IP'
+      ClientHeight = 212
+      ClientWidth = 305
+      object IPEdit: TEdit
+        Left = 44
+        Height = 23
+        Top = 96
+        Width = 144
+        TabOrder = 0
+      end
+      object PutIPLabel: TLabel
+        Left = 44
+        Height = 16
+        Top = 72
+        Width = 55
+        Caption = '&Put you IP'
+        FocusControl = IPEdit
+        ParentColor = False
+      end
+      object ValidateIPButton: TButton
+        Left = 204
+        Height = 25
+        Top = 95
+        Width = 68
+        AutoSize = True
+        Caption = '&Validate'
+        OnClick = ValidateIPButtonClick
+        TabOrder = 1
+      end
+    end
+    object ExtractEmailTabSheet: TTabSheet
+      Caption = 'Extract e-mail'
+      ClientHeight = 212
+      ClientWidth = 362
+      object TextWithEmailMemo: TMemo
+        Left = 12
+        Height = 90
+        Top = 40
+        Width = 280
+        Lines.Strings = (
+          'lksjdfhalksdjfhauhyrqwpoeixcmnjbzvxvcbmnbu'
+          'zsdkjiask kjasfdhgasdfwe qweriuqwie qqiasdnm'
+          'asdlasd test@gmail.com asfpiuawerlkjawewerw'
+          'waerquoiytroqiwutosdf aosidfa @@ #poip(*&%'
+        )
+        TabOrder = 0
+      end
+      object ExatractEmailButton: TButton
+        Left = 124
+        Height = 25
+        Top = 144
+        Width = 61
+        AutoSize = True
+        Caption = '&Extract'
+        OnClick = ExatractEmailButtonClick
+        TabOrder = 1
+      end
+    end
+    object ExtractURLTabSheet: TTabSheet
+      Caption = 'Extract URL'
+      ClientHeight = 212
+      ClientWidth = 362
+      object TextWithURLMemo: TMemo
+        Left = 12
+        Height = 90
+        Top = 40
+        Width = 280
+        Lines.Strings = (
+          'lksjdfhalksdjfhauhyrqwpoeixcmnjbzvxvcbmnbu'
+          'zsdkjiask kjasfdhgasdfwe qweriuqwie qqiasdnm'
+          'asdlasd http://silvioprog.com asfpiuawerlkjawe'
+          'waerquoiytroqiwutosdf aosidfa @@ #poip(*&%'
+        )
+        TabOrder = 0
+      end
+      object ExatractURLButton: TButton
+        Left = 124
+        Height = 25
+        Top = 144
+        Width = 61
+        AutoSize = True
+        Caption = '&Extract'
+        OnClick = ExatractURLButtonClick
+        TabOrder = 1
+      end
+    end
+  end
+end

@@ -1,0 +1,55 @@
+object MainForm: TMainForm
+  Left = 314
+  Height = 399
+  Top = 152
+  Width = 300
+  Caption = 'Process'
+  ClientHeight = 399
+  ClientWidth = 300
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '0.9.29'
+  object ProcessListBox: TListBox
+    Left = 0
+    Height = 324
+    Top = 0
+    Width = 300
+    Align = alClient
+    ItemHeight = 0
+    OnClick = ProcessListBoxClick
+    TabOrder = 3
+  end
+  object RunningProcessesButton: TButton
+    Left = 0
+    Height = 25
+    Top = 349
+    Width = 300
+    Align = alBottom
+    AutoSize = True
+    Caption = 'Running processes'
+    OnClick = RunningProcessesButtonClick
+    TabOrder = 1
+  end
+  object KillProcessButton: TButton
+    Left = 0
+    Height = 25
+    Top = 374
+    Width = 300
+    Align = alBottom
+    AutoSize = True
+    Caption = 'Kill process'
+    Enabled = False
+    OnClick = KillProcessButtonClick
+    TabOrder = 2
+  end
+  object UpdateListButton: TButton
+    Left = 0
+    Height = 25
+    Top = 324
+    Width = 300
+    Align = alBottom
+    Caption = 'Update list'
+    OnClick = UpdateListButtonClick
+    TabOrder = 0
+  end
+end

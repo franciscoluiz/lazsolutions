@@ -1,0 +1,3 @@
+{$mode objfpc}{$H+}
+{.$DEFINE DEBUGHEAP}
+{$DEFINE LSOPENSSL}

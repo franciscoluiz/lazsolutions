@@ -1,0 +1,31 @@
+object MainForm: TMainForm
+  Left = 314
+  Height = 300
+  Top = 152
+  Width = 400
+  Caption = 'MainForm'
+  ClientHeight = 300
+  ClientWidth = 400
+  Position = poDesktopCenter
+  LCLVersion = '0.9.29'
+  object InfoLabel: TLabel
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    Left = 81
+    Height = 16
+    Top = 142
+    Width = 238
+    Caption = 'Try running two copies of this application...'
+    Font.Color = clRed
+    Font.Style = [fsBold]
+    ParentColor = False
+    ParentFont = False
+  end
+  object RunOnceMonitorTimer: TTimer
+    Interval = 250
+    OnTimer = RunOnceMonitorTimerTimer
+    left = 48
+  end
+end

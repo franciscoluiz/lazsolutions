@@ -1,0 +1,185 @@
+object LSHTTPSendProxyConfigDialog: TLSHTTPSendProxyConfigDialog
+  Left = 239
+  Height = 214
+  Top = 147
+  Width = 360
+  BorderStyle = bsDialog
+  ClientHeight = 214
+  ClientWidth = 360
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object ClientPanel: TPanel
+    Left = 0
+    Height = 182
+    Top = 0
+    Width = 360
+    Align = alClient
+    ClientHeight = 182
+    ClientWidth = 360
+    TabOrder = 0
+    object ProxyGroupBox: TGroupBox
+      Left = 5
+      Height = 84
+      Top = 5
+      Width = 350
+      Align = alTop
+      BorderSpacing.Around = 4
+      ClientHeight = 66
+      ClientWidth = 346
+      TabOrder = 0
+      object HostLabel: TLabel
+        AnchorSideTop.Control = HostEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = HostEdit
+        Left = 94
+        Height = 1
+        Top = 13
+        Width = 1
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        FocusControl = HostEdit
+        ParentColor = False
+      end
+      object HostEdit: TEdit
+        AnchorSideTop.Control = ProxyGroupBox
+        AnchorSideRight.Control = ProxyGroupBox
+        AnchorSideRight.Side = asrBottom
+        Left = 97
+        Height = 23
+        Top = 2
+        Width = 241
+        Anchors = [akTop, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 8
+        TabOrder = 0
+      end
+      object PortEdit: TEdit
+        AnchorSideLeft.Control = HostEdit
+        AnchorSideTop.Control = HostEdit
+        AnchorSideTop.Side = asrBottom
+        Left = 97
+        Height = 23
+        Top = 29
+        Width = 96
+        BorderSpacing.Top = 4
+        TabOrder = 1
+      end
+      object PortLabel: TLabel
+        AnchorSideTop.Control = PortEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = PortEdit
+        Left = 94
+        Height = 1
+        Top = 40
+        Width = 1
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        FocusControl = PortEdit
+        ParentColor = False
+      end
+    end
+    object AuthenticationGroupBox: TGroupBox
+      Left = 5
+      Height = 84
+      Top = 93
+      Width = 350
+      Align = alClient
+      BorderSpacing.Left = 4
+      BorderSpacing.Right = 4
+      BorderSpacing.Bottom = 4
+      ClientHeight = 66
+      ClientWidth = 346
+      TabOrder = 1
+      object UserEdit: TEdit
+        AnchorSideTop.Control = AuthenticationGroupBox
+        AnchorSideRight.Control = AuthenticationGroupBox
+        AnchorSideRight.Side = asrBottom
+        Left = 97
+        Height = 23
+        Top = 2
+        Width = 241
+        Anchors = [akTop, akRight]
+        BorderSpacing.Top = 2
+        BorderSpacing.Right = 8
+        TabOrder = 0
+      end
+      object UserLabel: TLabel
+        AnchorSideTop.Control = UserEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = UserEdit
+        Left = 94
+        Height = 1
+        Top = 13
+        Width = 1
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        FocusControl = UserEdit
+        ParentColor = False
+      end
+      object PasswordLabel: TLabel
+        AnchorSideTop.Control = PasswordEdit
+        AnchorSideTop.Side = asrCenter
+        AnchorSideRight.Control = PasswordEdit
+        Left = 94
+        Height = 1
+        Top = 40
+        Width = 1
+        Anchors = [akTop, akRight]
+        BorderSpacing.Right = 2
+        FocusControl = PasswordEdit
+        ParentColor = False
+      end
+      object PasswordEdit: TEdit
+        AnchorSideLeft.Control = UserEdit
+        AnchorSideTop.Control = UserEdit
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = UserEdit
+        AnchorSideRight.Side = asrBottom
+        Left = 97
+        Height = 23
+        Top = 29
+        Width = 241
+        Anchors = [akTop, akLeft, akRight]
+        BorderSpacing.Top = 4
+        EchoMode = emPassword
+        PasswordChar = '*'
+        TabOrder = 1
+      end
+    end
+  end
+  object BottomPanel: TPanel
+    Left = 0
+    Height = 32
+    Top = 182
+    Width = 360
+    Align = alBottom
+    ClientHeight = 32
+    ClientWidth = 360
+    TabOrder = 1
+    object OKButton: TButton
+      Left = 303
+      Height = 26
+      Top = 3
+      Width = 26
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Top = 2
+      BorderSpacing.Bottom = 2
+      Default = True
+      ModalResult = 1
+      TabOrder = 0
+    end
+    object CancelButton: TButton
+      Left = 331
+      Height = 26
+      Top = 3
+      Width = 26
+      Align = alRight
+      AutoSize = True
+      BorderSpacing.Around = 2
+      Cancel = True
+      ModalResult = 2
+      TabOrder = 1
+    end
+  end
+end

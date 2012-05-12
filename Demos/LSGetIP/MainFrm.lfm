@@ -1,0 +1,28 @@
+object MainForm: TMainForm
+  Left = 290
+  Height = 240
+  Top = 184
+  Width = 320
+  BorderIcons = [biSystemMenu]
+  BorderStyle = bsDialog
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 320
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object GetBitBtn: TBitBtn
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    Left = 129
+    Height = 26
+    Top = 107
+    Width = 63
+    AutoSize = True
+    Caption = '&Get'
+    Kind = bkRetry
+    OnClick = GetBitBtnClick
+    TabOrder = 0
+  end
+end

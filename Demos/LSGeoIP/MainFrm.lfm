@@ -1,0 +1,255 @@
+object MainForm: TMainForm
+  Left = 275
+  Height = 371
+  Top = 161
+  Width = 400
+  Caption = 'MainForm'
+  ClientHeight = 371
+  ClientWidth = 400
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 371
+    Top = 0
+    Width = 400
+    ActivePage = CountryTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object CountryTabSheet: TTabSheet
+      Caption = 'Country'
+      ClientHeight = 343
+      ClientWidth = 392
+      object CountryGroupBox: TGroupBox
+        AnchorSideLeft.Control = CountryTabSheet
+        AnchorSideLeft.Side = asrCenter
+        AnchorSideTop.Control = CountryTabSheet
+        AnchorSideTop.Side = asrCenter
+        Left = 100
+        Height = 85
+        Top = 129
+        Width = 192
+        AutoSize = True
+        BorderSpacing.InnerBorder = 10
+        Caption = ' Country '
+        ClientHeight = 67
+        ClientWidth = 188
+        TabOrder = 0
+        object CountryCodeLabel: TLabel
+          AnchorSideLeft.Control = CountryIPLabel
+          AnchorSideTop.Control = CountryIPEdit
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 1
+          Top = 41
+          Width = 1
+          BorderSpacing.Top = 10
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object CountryNameLabel: TLabel
+          AnchorSideLeft.Control = CountryCodeLabel
+          AnchorSideTop.Control = CountryCodeLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 1
+          Top = 44
+          Width = 1
+          BorderSpacing.Top = 2
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object CountryIPEdit: TEdit
+          AnchorSideLeft.Control = CountryIPLabel
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CountryGroupBox
+          Left = 21
+          Height = 23
+          Top = 8
+          Width = 101
+          BorderSpacing.Left = 2
+          BorderSpacing.Top = 8
+          TabOrder = 0
+        end
+        object CountryGetButton: TButton
+          AnchorSideLeft.Control = CountryIPEdit
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CountryIPEdit
+          AnchorSideTop.Side = asrCenter
+          Left = 124
+          Height = 25
+          Top = 7
+          Width = 44
+          AutoSize = True
+          BorderSpacing.Left = 2
+          Caption = '&Get'
+          OnClick = CountryGetButtonClick
+          TabOrder = 1
+        end
+        object CountryIPLabel: TLabel
+          AnchorSideLeft.Control = CountryGroupBox
+          AnchorSideTop.Control = CountryIPEdit
+          AnchorSideTop.Side = asrCenter
+          Left = 8
+          Height = 16
+          Top = 11
+          Width = 11
+          BorderSpacing.Left = 8
+          Caption = '&IP'
+          FocusControl = CountryIPEdit
+          ParentColor = False
+        end
+        object CountryFlagImage: TImage
+          AnchorSideLeft.Control = CountryCodeLabel
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CountryCodeLabel
+          AnchorSideTop.Side = asrCenter
+          Left = 11
+          Height = 12
+          Top = 35
+          Width = 20
+          AutoSize = True
+          BorderSpacing.Left = 2
+        end
+      end
+      object CountryDBInfoLabel: TLabel
+        Left = 0
+        Height = 1
+        Top = 0
+        Width = 392
+        Align = alTop
+        ParentColor = False
+        WordWrap = True
+      end
+    end
+    object CityTabSheet: TTabSheet
+      Caption = 'City'
+      ClientHeight = 343
+      ClientWidth = 392
+      object CityGroupBox: TGroupBox
+        Left = 0
+        Height = 69
+        Top = 9
+        Width = 392
+        Align = alTop
+        AutoSize = True
+        BorderSpacing.Top = 8
+        BorderSpacing.InnerBorder = 2
+        Caption = ' City '
+        ClientHeight = 51
+        ClientWidth = 388
+        TabOrder = 0
+        object CityCountryCodeLabel: TLabel
+          AnchorSideLeft.Control = CityIPLabel
+          AnchorSideTop.Control = CityIPEdit
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 1
+          Top = 41
+          Width = 1
+          BorderSpacing.Top = 10
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object CityCountryNameLabel: TLabel
+          AnchorSideLeft.Control = CityCountryCodeLabel
+          AnchorSideTop.Control = CityCountryCodeLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 1
+          Top = 44
+          Width = 1
+          BorderSpacing.Top = 2
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object CityIPEdit: TEdit
+          AnchorSideLeft.Control = CityIPLabel
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CityGroupBox
+          Left = 21
+          Height = 23
+          Top = 8
+          Width = 101
+          BorderSpacing.Left = 2
+          BorderSpacing.Top = 8
+          TabOrder = 0
+        end
+        object CityGetButton: TButton
+          AnchorSideLeft.Control = CityIPEdit
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CityIPEdit
+          AnchorSideTop.Side = asrCenter
+          Left = 124
+          Height = 25
+          Top = 7
+          Width = 44
+          AutoSize = True
+          BorderSpacing.Left = 2
+          Caption = '&Get'
+          OnClick = CityGetButtonClick
+          TabOrder = 1
+        end
+        object CityIPLabel: TLabel
+          AnchorSideLeft.Control = CityGroupBox
+          AnchorSideTop.Control = CityIPEdit
+          AnchorSideTop.Side = asrCenter
+          Left = 8
+          Height = 16
+          Top = 11
+          Width = 11
+          BorderSpacing.Left = 8
+          Caption = '&IP'
+          FocusControl = CountryIPEdit
+          ParentColor = False
+        end
+        object CityFlagImage: TImage
+          AnchorSideLeft.Control = CityCountryCodeLabel
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = CityCountryCodeLabel
+          AnchorSideTop.Side = asrCenter
+          Left = 11
+          Height = 12
+          Top = 35
+          Width = 20
+          AutoSize = True
+          BorderSpacing.Left = 2
+        end
+        object CityInfoLabel: TLabel
+          AnchorSideLeft.Control = CityCountryNameLabel
+          AnchorSideTop.Control = CityCountryNameLabel
+          AnchorSideTop.Side = asrBottom
+          Left = 8
+          Height = 1
+          Top = 45
+          Width = 1
+          Font.Color = clTeal
+          ParentColor = False
+          ParentFont = False
+        end
+      end
+      object CityDBInfoLabel: TLabel
+        Left = 0
+        Height = 1
+        Top = 0
+        Width = 392
+        Align = alTop
+        ParentColor = False
+        WordWrap = True
+      end
+      object GoogleMapsImage: TImage
+        Left = 0
+        Height = 265
+        Top = 78
+        Width = 392
+        Align = alClient
+      end
+    end
+  end
+end

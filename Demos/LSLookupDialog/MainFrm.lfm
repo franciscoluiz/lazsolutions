@@ -1,0 +1,102 @@
+object MainForm: TMainForm
+  Left = 264
+  Height = 240
+  Top = 156
+  Width = 400
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 400
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.2'
+  object ValueEdit: TEdit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Side = asrCenter
+    Left = 32
+    Height = 23
+    Top = 35
+    Width = 32
+    BorderSpacing.Left = 2
+    TabOrder = 0
+  end
+  object TestButton: TButton
+    AnchorSideLeft.Control = ValueEdit
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = ValueEdit
+    AnchorSideTop.Side = asrCenter
+    Left = 66
+    Height = 25
+    Top = 34
+    Width = 35
+    AutoSize = True
+    BorderSpacing.Left = 2
+    Caption = '...'
+    OnClick = TestButtonClick
+    TabOrder = 1
+  end
+  object DescriptionLabel: TLabel
+    AnchorSideLeft.Control = TestButton
+    AnchorSideLeft.Side = asrBottom
+    AnchorSideTop.Control = TestButton
+    AnchorSideBottom.Control = TestButton
+    AnchorSideBottom.Side = asrBottom
+    Left = 103
+    Height = 25
+    Top = 34
+    Width = 217
+    Anchors = [akTop, akLeft, akBottom]
+    AutoSize = False
+    BorderSpacing.Left = 2
+    Color = clSkyBlue
+    FocusControl = ValueEdit
+    Layout = tlCenter
+    ParentColor = False
+    Transparent = False
+  end
+  object Value2Edit: TEdit
+    AnchorSideLeft.Control = ValueEdit
+    AnchorSideTop.Control = Test2Button
+    AnchorSideTop.Side = asrCenter
+    AnchorSideRight.Control = ValueEdit
+    AnchorSideRight.Side = asrBottom
+    Left = 32
+    Height = 23
+    Top = 80
+    Width = 32
+    Anchors = [akTop, akLeft, akRight]
+    TabOrder = 2
+  end
+  object Test2Button: TButton
+    AnchorSideLeft.Control = TestButton
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = TestButton
+    AnchorSideTop.Side = asrBottom
+    Left = 66
+    Height = 25
+    Top = 79
+    Width = 35
+    AutoSize = True
+    BorderSpacing.Top = 20
+    Caption = '...'
+    OnClick = Test2ButtonClick
+    TabOrder = 3
+  end
+  object Description2Label: TLabel
+    AnchorSideLeft.Control = DescriptionLabel
+    AnchorSideTop.Control = Test2Button
+    AnchorSideRight.Control = DescriptionLabel
+    AnchorSideRight.Side = asrBottom
+    AnchorSideBottom.Control = Test2Button
+    AnchorSideBottom.Side = asrBottom
+    Left = 103
+    Height = 25
+    Top = 79
+    Width = 217
+    Anchors = [akTop, akLeft, akRight, akBottom]
+    AutoSize = False
+    Color = clSkyBlue
+    FocusControl = Value2Edit
+    Layout = tlCenter
+    ParentColor = False
+    Transparent = False
+  end
+end

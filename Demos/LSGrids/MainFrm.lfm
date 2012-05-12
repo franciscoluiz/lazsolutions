@@ -1,0 +1,133 @@
+object MainForm: TMainForm
+  Left = 277
+  Height = 300
+  Top = 156
+  Width = 400
+  Caption = 'MainForm'
+  ClientHeight = 300
+  ClientWidth = 400
+  OnCreate = FormCreate
+  Position = poDesktopCenter
+  LCLVersion = '0.9.30.4'
+  object MainPageControl: TPageControl
+    Left = 0
+    Height = 300
+    Top = 0
+    Width = 400
+    ActivePage = JSONTabSheet
+    Align = alClient
+    TabIndex = 0
+    TabOrder = 0
+    object JSONTabSheet: TTabSheet
+      Caption = 'JSON'
+      ClientHeight = 272
+      ClientWidth = 392
+      object JSONLSStringGrid: TLSStringGrid
+        Left = 0
+        Height = 206
+        Top = 16
+        Width = 392
+        Align = alClient
+        AlternateColor = clMoneyGreen
+        AltColorStartNormal = False
+        DoubleBuffered = True
+        FocusColor = 7452927
+        FocusRectVisible = True
+        GridLineStyle = psSolid
+        MenuStyleStart = clWhite
+        MenuStyleStop = 12320767
+        MenuStyleCaptionColor = clTeal
+        Options = [goFixedVertLine, goFixedHorzLine, goVertLine, goHorzLine, goRangeSelect, goColSizing, goColMoving, goEditing, goRowSelect, goDblClickAutoSize, goSmoothScroll]
+        SaveOptions = [soContent]
+        SortOrder = soAscending
+        TabOrder = 0
+        ColWidths = (
+          12
+          64
+        )
+      end
+      object JSONBottomPanel: TPanel
+        Left = 0
+        Height = 50
+        Top = 222
+        Width = 392
+        Align = alBottom
+        ClientHeight = 50
+        ClientWidth = 392
+        TabOrder = 1
+        object JSONPopulateGridButton: TButton
+          Left = 1
+          Height = 48
+          Top = 1
+          Width = 97
+          Align = alLeft
+          AutoSize = True
+          Caption = '&Populate grid'
+          OnClick = JSONPopulateGridButtonClick
+          TabOrder = 0
+        end
+        object JSONLoadButton: TButton
+          Left = 289
+          Height = 48
+          Top = 1
+          Width = 52
+          Align = alRight
+          AutoSize = True
+          Caption = '&Load'
+          OnClick = JSONLoadButtonClick
+          TabOrder = 3
+        end
+        object JSONSaveButton: TButton
+          Left = 341
+          Height = 48
+          Top = 1
+          Width = 50
+          Align = alRight
+          AutoSize = True
+          Caption = '&Save'
+          OnClick = JSONSaveButtonClick
+          TabOrder = 4
+        end
+        object ClearButton: TButton
+          Left = 98
+          Height = 48
+          Top = 1
+          Width = 53
+          Align = alLeft
+          AutoSize = True
+          Caption = '&Clear'
+          OnClick = ClearButtonClick
+          TabOrder = 1
+        end
+        object FindButton: TButton
+          Left = 151
+          Height = 48
+          Top = 1
+          Width = 49
+          Align = alLeft
+          AutoSize = True
+          Caption = '&Find'
+          OnClick = FindButtonClick
+          TabOrder = 2
+        end
+      end
+      object InfoLabel: TLabel
+        Left = 0
+        Height = 16
+        Top = 0
+        Width = 392
+        Align = alTop
+        Alignment = taCenter
+        Caption = 'Click in titles to sort'
+        Font.Style = [fsBold]
+        ParentColor = False
+        ParentFont = False
+      end
+    end
+  end
+  object FindDialog1: TFindDialog
+    OnFind = FindDialog1Find
+    left = 69
+    top = 125
+  end
+end

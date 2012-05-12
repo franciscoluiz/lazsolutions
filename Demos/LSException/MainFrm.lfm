@@ -1,0 +1,27 @@
+object MainForm: TMainForm
+  Left = 270
+  Height = 240
+  Top = 182
+  Width = 320
+  Caption = 'MainForm'
+  ClientHeight = 240
+  ClientWidth = 320
+  Position = poDesktopCenter
+  ShowHint = True
+  LCLVersion = '0.9.31'
+  object CauseErrorButton: TButton
+    AnchorSideLeft.Control = Owner
+    AnchorSideLeft.Side = asrCenter
+    AnchorSideTop.Control = Owner
+    AnchorSideTop.Side = asrCenter
+    Left = 115
+    Height = 25
+    Top = 108
+    Width = 90
+    AutoSize = True
+    Caption = 'StrToInt(''A'')'
+    Default = True
+    OnClick = CauseErrorButtonClick
+    TabOrder = 0
+  end
+end

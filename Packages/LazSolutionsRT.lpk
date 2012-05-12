@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="LazSolutionsRT"/>
+    <AddToProjectUsesSection Value="False"/>
+    <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
+    <CompilerOptions>
+      <Version Value="10"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <IncludeFiles Value="..\Core"/>
+        <OtherUnitFiles Value="..\Core;..\Forms;..\3rdParty\Synapse;..\3rdParty\MaxMind"/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <CodeGeneration>
+        <Optimizations>
+          <OptimizationLevel Value="2"/>
+        </Optimizations>
+      </CodeGeneration>
+      <Other>
+        <CompilerMessages>
+          <UseMsgFile Value="True"/>
+        </CompilerMessages>
+        <CompilerPath Value="$(CompPath)"/>
+      </Other>
+    </CompilerOptions>
+    <Description Value="LazSolutions RunTime package."/>
+    <License Value="See the file LICENSE.txt, included in this distribution, for details about the copyright."/>
+    <Version Minor="2" Release="8" Build="7"/>
+    <Files Count="20">
+      <Item1>
+        <Filename Value="..\Core\lazsolutions.inc"/>
+        <Type Value="Include"/>
+      </Item1>
+      <Item2>
+        <Filename Value="..\Core\LSCaptcha.pas"/>
+        <UnitName Value="LSCaptcha"/>
+      </Item2>
+      <Item3>
+        <Filename Value="..\Core\LSConfig.pas"/>
+        <UnitName Value="LSConfig"/>
+      </Item3>
+      <Item4>
+        <Filename Value="..\Core\LSConsts.pas"/>
+        <UnitName Value="LSConsts"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\Core\LSExceptionUtils.pas"/>
+        <UnitName Value="LSExceptionUtils"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\Core\LSExpression.pas"/>
+        <UnitName Value="LSExpression"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\Core\LSGeoIP.pas"/>
+        <UnitName Value="LSGeoIP"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\Core\LSHashs.pas"/>
+        <UnitName Value="LSHashs"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\Core\LSHTTPSend.pas"/>
+        <UnitName Value="LSHTTPSend"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\Core\LSMessages.pas"/>
+        <UnitName Value="LSMessages"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\Core\LSMessages.inc"/>
+        <Type Value="Include"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\Core\LSPlayWAV.pas"/>
+        <UnitName Value="LSPlayWAV"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\Core\LSRegEx.pas"/>
+        <UnitName Value="LSRegEx"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\Core\LSSMTPSend.pas"/>
+        <UnitName Value="LSSMTPSend"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\Core\LSUtils.pas"/>
+        <UnitName Value="LSUtils"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\Core\LSZCompress.pas"/>
+        <UnitName Value="LSZCompress"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\Forms\LSHTTPSendProxyCfgDlg.pas"/>
+        <UnitName Value="LSHTTPSendProxyCfgDlg"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\Forms\LSHTTPSendProxyCfgDlg.lfm"/>
+        <Type Value="LFM"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\Forms\LSHTTPSendUPCfgDlg.pas"/>
+        <UnitName Value="LSHTTPSendUPCfgDlg"/>
+      </Item19>
+      <Item20>
+        <Filename Value="..\Forms\LSHTTPSendUPCfgDlg.lfm"/>
+        <Type Value="LFM"/>
+      </Item20>
+    </Files>
+    <Type Value="RunAndDesignTime"/>
+    <RequiredPkgs Count="1">
+      <Item1>
+        <PackageName Value="SynEdit"/>
+      </Item1>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+  </Package>
+</CONFIG>
