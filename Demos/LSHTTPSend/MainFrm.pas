@@ -94,7 +94,7 @@ type
 const
   CUnableHTMLMsg = 'Unable to get the HTML.';
   CDownloadURL =
-    'http://lazsolutions.googlecode.com/files/lssendmail_1.6_win32_all.exe';
+    'https://github.com/downloads/silvioprog/lazsolutions/Flags.zip';
   CDownloadKBBySec = 50 * 1024; // Use High(Int64) to download direct.
   CDOMDocumentURL = 'http://www.google.com/finance/converter';
   CGooGlAPIURL = 'https://www.googleapis.com/urlshortener/v1/url';
@@ -211,11 +211,12 @@ procedure TMainForm.JSONGetButtonClick(Sender: TObject);
 var
   VData: TJSONData = nil;
 begin
-  LSHTTPGetJSON(
-    'http://lazsolutions.googlecode.com/svn/trunk/Demos/LSHTTPSend/test.json',
-    VData);
-  JSONIdLabel.Caption := 'ID: ' + IntToStr(VData.Items[0].AsInteger);
-  JSONNameLabel.Caption := 'Name: ' + VData.Items[1].AsString;
+  LSHTTPGetJSON('http://pastebin.com/raw.php?i=u74uH9Li', VData);
+  if Assigned(VData) and (VData.Count > 0) then
+  begin
+    JSONIdLabel.Caption := 'ID: ' + IntToStr(VData.Items[0].AsInteger);
+    JSONNameLabel.Caption := 'Name: ' + VData.Items[1].AsString;
+  end;
 end;
 
 procedure TMainForm.PauseDownloadButtonClick(Sender: TObject);
