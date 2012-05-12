@@ -1,4 +1,4 @@
-LazSolutions framework, Version 0.1.7
+LazSolutions framework, Version 0.2.0
 Copyright (C) 2010-2012 Silvio Clecio.
 
 http://silvioprog.com.br
