@@ -34,6 +34,7 @@ type
 
   TLSCustomStringGrid = class(TCustomStringGrid, ILSAboutComponent)
   private
+    FBookmark: Integer;
     FSelectedRow: TJSONObject;
     FColumnsManager: Boolean;
     FMenuStyleCaptionColor: TColor;
@@ -89,6 +90,8 @@ type
     procedure SaveToJSONFile(const AFileName: TFileName;
       const ASaveAllAsString: Boolean = False);
     procedure EmptyGrid; virtual;
+    procedure SetBookmark;
+    procedure GetBookmark;
     procedure SelectFirstRow;
     procedure SelectLastRow;
     function SelectedRow: TJSONObject;
@@ -737,6 +740,16 @@ begin
   finally
     EndUpdate;
   end;
+end;
+
+procedure TLSCustomStringGrid.SetBookmark;
+begin
+  FBookmark := Row;
+end;
+
+procedure TLSCustomStringGrid.GetBookmark;
+begin
+  Row := FBookmark;
 end;
 
 procedure TLSCustomStringGrid.SelectFirstRow;
