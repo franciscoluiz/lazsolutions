@@ -750,10 +750,16 @@ begin
   FBookmark := Row;
 end;
 
+{$HINTS OFF}
 procedure TLSCustomStringGrid.GetBookmark;
+var
+  VRect: TRect;
 begin
+  SetRect(VRect, -1, -1, -1, -1);
+  Selection := TGridRect(VRect);
   Row := FBookmark;
 end;
+{$HINTS ON}
 
 procedure TLSCustomStringGrid.SelectFirstRow;
 begin
