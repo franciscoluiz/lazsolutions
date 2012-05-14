@@ -27,7 +27,7 @@
     </CompilerOptions>
     <Description Value="LazSolutions DesignTime package."/>
     <License Value="See the file LICENSE.txt, included in this distribution, for details about the copyright."/>
-    <Version Minor="2" Release="9" Build="24"/>
+    <Version Minor="2" Release="9" Build="25"/>
     <Files Count="27">
       <Item1>
         <Filename Value="..\Core\LSAllReg.pas"/>
