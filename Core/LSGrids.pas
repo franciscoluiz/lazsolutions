@@ -36,6 +36,7 @@ type
   private
     FBookmark: Integer;
     FSelectedRow: TJSONObject;
+    FSelectedRows: TJSONArray;
     FColumnsManager: Boolean;
     FMenuStyleCaptionColor: TColor;
     FPNGSortAsc: TPortableNetworkGraphic;
@@ -95,6 +96,7 @@ type
     procedure SelectFirstRow;
     procedure SelectLastRow;
     function SelectedRow: TJSONObject;
+    function SelectedRows: TJSONArray;
     property About: string read GetAbout write SetAbout stored False;
     property IndicatorWidth: Integer read FIndicatorWidth
       write SetIndicatorWidth default CLSDefaultGridIndicatorWidth;
@@ -654,6 +656,7 @@ begin
   FPNGSortDesc.Free;
   FPNGColsManager.Free;
   FreeAndNil(FSelectedRow);
+  FreeAndNil(FSelectedRows);
   inherited Destroy;
 end;
 
@@ -775,6 +778,27 @@ begin
     (FSelectedRow.Items[0].AsString = '') then
     FSelectedRow.Clear;
   Result := FSelectedRow;
+end;
+
+function TLSCustomStringGrid.SelectedRows: TJSONArray;
+var
+  I, J: Integer;
+  VJSONObject: TJSONObject;
+begin
+  if not Assigned(FSelectedRows) then
+    FSelectedRows := TJSONArray.Create;
+  FSelectedRows.Clear;
+  for I := Selection.Top to Selection.Bottom do
+  begin
+    VJSONObject := TJSONObject.Create;
+    for J := 1 to Pred(ColCount) do
+      VJSONObject.Add(Cols[J][0], Rows[I][J]);
+    FSelectedRows.Add(VJSONObject);
+  end;
+  if Assigned(VJSONObject) and (VJSONObject.Count > 0) and
+    (VJSONObject.Names[0] = '') and (VJSONObject.Items[0].AsString = '') then
+    FSelectedRows.Clear;
+  Result := FSelectedRows;
 end;
 
 procedure TLSCustomStringGrid.SetMenuStyleStart(const AValue: TColor);
