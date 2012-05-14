@@ -89,6 +89,8 @@ type
     procedure SaveToJSONFile(const AFileName: TFileName;
       const ASaveAllAsString: Boolean = False);
     procedure EmptyGrid; virtual;
+    procedure SelectFirstRow;
+    procedure SelectLastRow;
     function SelectedRow: TJSONObject;
     property About: string read GetAbout write SetAbout stored False;
     property IndicatorWidth: Integer read FIndicatorWidth
@@ -735,6 +737,16 @@ begin
   finally
     EndUpdate;
   end;
+end;
+
+procedure TLSCustomStringGrid.SelectFirstRow;
+begin
+  Row := 0;
+end;
+
+procedure TLSCustomStringGrid.SelectLastRow;
+begin
+  Row := RowCount;
 end;
 
 function TLSCustomStringGrid.SelectedRow: TJSONObject;
