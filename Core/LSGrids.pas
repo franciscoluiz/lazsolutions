@@ -650,7 +650,7 @@ begin
   FPNGSortAsc.Free;
   FPNGSortDesc.Free;
   FPNGColsManager.Free;
-  FSelectedRow.Free;
+  FreeAndNil(FSelectedRow);
   inherited Destroy;
 end;
 
