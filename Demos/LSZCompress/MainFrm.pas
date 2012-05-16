@@ -49,20 +49,20 @@ end;
 
 procedure TMainForm.UnCompressFileButtonClick(Sender: TObject);
 begin
-  FileIn := LSOpenDialog(odtFile, '', '', -1, False, True);
+  FileIn := LSOpenDialog;
   if FileOut = '' then
     FileOut := 'Test.txt';
-  LSSaveDialog(FileOut, sdtFile, '', '', -1, True, True);
+  LSSaveDialog(FileOut);
   LSZUnCompressFile(FileIn, FileOut);
   OpenDocument(FileOut);
 end;
 
 procedure TMainForm.CompressFileButtonClick(Sender: TObject);
 begin
-  FileIn := LSOpenDialog(odtFile, '', '', -1, False, True);
+  FileIn := LSOpenDialog;
   if FileOut = '' then
     FileOut := 'Test.txt';
-  LSSaveDialog(FileOut, sdtFile, '', '', -1, True, True);
+  LSSaveDialog(FileOut);
   LSZCompressFile(FileIn, FileOut, clMax);
 end;
 

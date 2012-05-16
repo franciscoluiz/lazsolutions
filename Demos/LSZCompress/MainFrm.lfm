@@ -7,7 +7,7 @@ object MainForm: TMainForm
   ClientHeight = 240
   ClientWidth = 320
   Position = poDesktopCenter
-  LCLVersion = '0.9.30.2'
+  LCLVersion = '0.9.30.4'
   object MainPageControl: TPageControl
     Left = 0
     Height = 240
