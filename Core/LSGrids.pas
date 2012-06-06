@@ -73,6 +73,8 @@ type
   public
     constructor Create(AOwner: TComponent); override;
     destructor Destroy; override;
+    procedure Select(const ACol: Integer; const AValue: string;
+      const ACaseSensitive: Boolean = False);
     function Find(const AText: string; const ACaseSensitive: Boolean = False;
       const AFindNext: Boolean = True): Boolean;
     procedure LoadFromJSONStream(var AStream: TStream;
@@ -658,6 +660,19 @@ begin
   FreeAndNil(FSelectedRow);
   FreeAndNil(FSelectedRows);
   inherited Destroy;
+end;
+
+procedure TLSCustomStringGrid.Select(const ACol: Integer; const AValue: string;
+  const ACaseSensitive: Boolean);
+var
+  I: Integer;
+begin
+  for I := 0 to Pred(RowCount) do
+    if Cells[ACol, I] = AValue then
+    begin
+      Row := I;
+      Break;
+    end;
 end;
 
 function TLSCustomStringGrid.Find(const AText: string;
