@@ -1,9 +1,9 @@
 {==============================================================================|
-| Project : Ararat Synapse                                       | 007.005.002 |
+| Project : Ararat Synapse                                       | 007.005.003 |
 |==============================================================================|
 | Content: Serial port support                                                 |
 |==============================================================================|
-| Copyright (c)2001-2011, Lukas Gebauer                                        |
+| Copyright (c)2001-2012, Lukas Gebauer                                        |
 | All rights reserved.                                                         |
 |                                                                              |
 | Redistribution and use in source and binary forms, with or without           |
@@ -33,7 +33,7 @@
 | DAMAGE.                                                                      |
 |==============================================================================|
 | The Initial Developer of the Original Code is Lukas Gebauer (Czech Republic).|
-| Portions created by Lukas Gebauer are Copyright (c)2001-2011.                |
+| Portions created by Lukas Gebauer are Copyright (c)2001-2012.                |
 | All Rights Reserved.                                                         |
 |==============================================================================|
 | Contributor(s):                                                              |
@@ -197,7 +197,7 @@ type
 
 const
 {$IFDEF UNIX}
-  {$IFDEF DARWIN}
+  {$IFDEF BSD}
   MaxRates = 18;  //MAC
   {$ELSE}
    MaxRates = 30; //UNIX
@@ -226,7 +226,7 @@ const
     (57600, B57600),
     (115200, B115200),
     (230400, B230400)
-{$IFNDEF DARWIN}
+{$IFNDEF BSD}
     ,(460800, B460800)
   {$IFDEF UNIX}
     ,(500000, B500000),
@@ -2309,30 +2309,21 @@ end;
 {$IFNDEF MSWINDOWS}
 function GetSerialPortNames: string;
 var
-  Index: Integer;
-  Data: string;
-  TmpPorts: String;
   sr : TSearchRec;
 begin
-  try
-    TmpPorts := '';
-    if FindFirst('/dev/ttyS*', $FFFFFFFF, sr) = 0 then
-    begin
-      repeat
-        if (sr.Attr and $FFFFFFFF) = Sr.Attr then
-        begin
-          data := sr.Name;
-          index := length(data);
-          while (index > 1) and (data[index] <> '/') do
-            index := index - 1;
-          TmpPorts := TmpPorts + ' ' + copy(data, 1, index + 1);
-        end;
-      until FindNext(sr) <> 0;
-    end;
-    FindClose(sr);
-  finally
-    Result:=TmpPorts;
+  Result := '';
+  if FindFirst('/dev/ttyS*', $FFFFFFFF, sr) = 0 then
+  begin
+    repeat
+      if (sr.Attr and $FFFFFFFF) = Sr.Attr then
+      begin
+        if Result <> '' then
+          Result := Result + ',';
+        Result := Result + sr.Name;
+      end;
+    until FindNext(sr) <> 0;
   end;
+  FindClose(sr);
 end;
 {$ENDIF}
 
