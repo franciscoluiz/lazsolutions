@@ -951,7 +951,7 @@ type
     procedure LoadFromBase64String(const AString: string);
     procedure SaveToBase64Stream(var AStream: TStream);
     procedure SaveToBase64File(const AFileName: TFileName);
-    procedure SaveToBase64String(var AString: string);
+    procedure SaveToBase64String(out AString: string);
     function AsBase64: string;
     function IsEmpty: Boolean;
     function Validate: Boolean; virtual;
@@ -7087,7 +7087,7 @@ begin
   end;
 end;
 
-procedure TLSCustomImage.SaveToBase64String(var AString: string);
+procedure TLSCustomImage.SaveToBase64String(out AString: string);
 var
   VEncodedStream: TStringStream;
 begin

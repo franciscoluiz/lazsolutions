@@ -3,14 +3,13 @@
   <Package Version="4">
     <PathDelim Value="\"/>
     <Name Value="LazSolutionsRT"/>
-    <AddToProjectUsesSection Value="False"/>
     <Author Value="Silvio Clecio - http://silvioprog.com.br"/>
     <CompilerOptions>
-      <Version Value="10"/>
+      <Version Value="11"/>
       <PathDelim Value="\"/>
       <SearchPaths>
-        <IncludeFiles Value="..\Core"/>
-        <OtherUnitFiles Value="..\Core;..\Forms;..\3rdParty\Synapse;..\3rdParty\MaxMind"/>
+        <IncludeFiles Value="..\Units"/>
+        <OtherUnitFiles Value="..\Units;..\Forms;..\3rdParty\Synapse;..\3rdParty\MaxMind"/>
         <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
       </SearchPaths>
       <CodeGeneration>
@@ -30,84 +29,84 @@
     <Version Minor="2" Release="8" Build="7"/>
     <Files Count="20">
       <Item1>
-        <Filename Value="..\Core\lazsolutions.inc"/>
-        <Type Value="Include"/>
-      </Item1>
-      <Item2>
-        <Filename Value="..\Core\LSCaptcha.pas"/>
-        <UnitName Value="LSCaptcha"/>
-      </Item2>
-      <Item3>
-        <Filename Value="..\Core\LSConfig.pas"/>
-        <UnitName Value="LSConfig"/>
-      </Item3>
-      <Item4>
-        <Filename Value="..\Core\LSConsts.pas"/>
-        <UnitName Value="LSConsts"/>
-      </Item4>
-      <Item5>
-        <Filename Value="..\Core\LSExceptionUtils.pas"/>
-        <UnitName Value="LSExceptionUtils"/>
-      </Item5>
-      <Item6>
-        <Filename Value="..\Core\LSExpression.pas"/>
-        <UnitName Value="LSExpression"/>
-      </Item6>
-      <Item7>
-        <Filename Value="..\Core\LSGeoIP.pas"/>
-        <UnitName Value="LSGeoIP"/>
-      </Item7>
-      <Item8>
-        <Filename Value="..\Core\LSHashs.pas"/>
-        <UnitName Value="LSHashs"/>
-      </Item8>
-      <Item9>
-        <Filename Value="..\Core\LSHTTPSend.pas"/>
-        <UnitName Value="LSHTTPSend"/>
-      </Item9>
-      <Item10>
-        <Filename Value="..\Core\LSMessages.pas"/>
-        <UnitName Value="LSMessages"/>
-      </Item10>
-      <Item11>
-        <Filename Value="..\Core\LSMessages.inc"/>
-        <Type Value="Include"/>
-      </Item11>
-      <Item12>
-        <Filename Value="..\Core\LSPlayWAV.pas"/>
-        <UnitName Value="LSPlayWAV"/>
-      </Item12>
-      <Item13>
-        <Filename Value="..\Core\LSRegEx.pas"/>
-        <UnitName Value="LSRegEx"/>
-      </Item13>
-      <Item14>
-        <Filename Value="..\Core\LSSMTPSend.pas"/>
-        <UnitName Value="LSSMTPSend"/>
-      </Item14>
-      <Item15>
-        <Filename Value="..\Core\LSUtils.pas"/>
-        <UnitName Value="LSUtils"/>
-      </Item15>
-      <Item16>
-        <Filename Value="..\Core\LSZCompress.pas"/>
-        <UnitName Value="LSZCompress"/>
-      </Item16>
-      <Item17>
         <Filename Value="..\Forms\LSHTTPSendProxyCfgDlg.pas"/>
         <UnitName Value="LSHTTPSendProxyCfgDlg"/>
-      </Item17>
-      <Item18>
+      </Item1>
+      <Item2>
         <Filename Value="..\Forms\LSHTTPSendProxyCfgDlg.lfm"/>
         <Type Value="LFM"/>
-      </Item18>
-      <Item19>
+      </Item2>
+      <Item3>
         <Filename Value="..\Forms\LSHTTPSendUPCfgDlg.pas"/>
         <UnitName Value="LSHTTPSendUPCfgDlg"/>
-      </Item19>
-      <Item20>
+      </Item3>
+      <Item4>
         <Filename Value="..\Forms\LSHTTPSendUPCfgDlg.lfm"/>
         <Type Value="LFM"/>
+      </Item4>
+      <Item5>
+        <Filename Value="..\Units\lazsolutions.inc"/>
+        <Type Value="Include"/>
+      </Item5>
+      <Item6>
+        <Filename Value="..\Units\LSCaptcha.pas"/>
+        <UnitName Value="LSCaptcha"/>
+      </Item6>
+      <Item7>
+        <Filename Value="..\Units\LSConfig.pas"/>
+        <UnitName Value="LSConfig"/>
+      </Item7>
+      <Item8>
+        <Filename Value="..\Units\LSConsts.pas"/>
+        <UnitName Value="LSConsts"/>
+      </Item8>
+      <Item9>
+        <Filename Value="..\Units\LSExceptionUtils.pas"/>
+        <UnitName Value="LSExceptionUtils"/>
+      </Item9>
+      <Item10>
+        <Filename Value="..\Units\LSExpression.pas"/>
+        <UnitName Value="LSExpression"/>
+      </Item10>
+      <Item11>
+        <Filename Value="..\Units\LSGeoIP.pas"/>
+        <UnitName Value="LSGeoIP"/>
+      </Item11>
+      <Item12>
+        <Filename Value="..\Units\LSHashs.pas"/>
+        <UnitName Value="LSHashs"/>
+      </Item12>
+      <Item13>
+        <Filename Value="..\Units\LSHTTPSend.pas"/>
+        <UnitName Value="LSHTTPSend"/>
+      </Item13>
+      <Item14>
+        <Filename Value="..\Units\LSMessages.pas"/>
+        <UnitName Value="LSMessages"/>
+      </Item14>
+      <Item15>
+        <Filename Value="..\Units\LSMessages.inc"/>
+        <Type Value="Include"/>
+      </Item15>
+      <Item16>
+        <Filename Value="..\Units\LSPlayWAV.pas"/>
+        <UnitName Value="LSPlayWAV"/>
+      </Item16>
+      <Item17>
+        <Filename Value="..\Units\LSRegEx.pas"/>
+        <UnitName Value="LSRegEx"/>
+      </Item17>
+      <Item18>
+        <Filename Value="..\Units\LSSMTPSend.pas"/>
+        <UnitName Value="LSSMTPSend"/>
+      </Item18>
+      <Item19>
+        <Filename Value="..\Units\LSUtils.pas"/>
+        <UnitName Value="LSUtils"/>
+      </Item19>
+      <Item20>
+        <Filename Value="..\Units\LSZCompress.pas"/>
+        <UnitName Value="LSZCompress"/>
       </Item20>
     </Files>
     <Type Value="RunAndDesignTime"/>

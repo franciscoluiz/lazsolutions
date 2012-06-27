@@ -7,7 +7,7 @@ object MainForm: TMainForm
   ClientHeight = 240
   ClientWidth = 320
   Position = poDesktopCenter
-  LCLVersion = '0.9.30'
+  LCLVersion = '1.1'
   object TopPanel: TPanel
     Left = 0
     Height = 22
@@ -36,7 +36,6 @@ object MainForm: TMainForm
         65FF555957FF5E6361FF535856FF474B49FF686A69FFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       }
-      NumGlyphs = 0
       OnClick = TopLeftSpeedButtonClick
     end
     object TopRightSpeedButton: TSpeedButton
@@ -57,7 +56,6 @@ object MainForm: TMainForm
         69FF474B49FF535856FF5E6361FF555957FF636565FFFAFAFAFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       }
-      NumGlyphs = 0
       OnClick = TopRightSpeedButtonClick
     end
   end
@@ -89,7 +87,6 @@ object MainForm: TMainForm
         33FF111111FF111111FF111111FF111111FF474747FFFFFFFFFFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       }
-      NumGlyphs = 0
       OnClick = BottomLeftSpeedButtonClick
     end
     object BottomRightSpeedButton: TSpeedButton
@@ -110,7 +107,6 @@ object MainForm: TMainForm
         47FF111111FF111111FF111111FF111111FF333333FFF9F9F9FFFFFFFFFFFFFF
         FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
       }
-      NumGlyphs = 0
       OnClick = BottomRightSpeedButtonClick
     end
   end
@@ -119,10 +115,10 @@ object MainForm: TMainForm
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = Owner
     AnchorSideTop.Side = asrCenter
-    Left = 31
-    Height = 16
-    Top = 112
-    Width = 258
+    Left = 32
+    Height = 14
+    Top = 113
+    Width = 257
     Caption = 'Tip: use Ctrl+C to copy all text of LSNotifierOS'
     Font.Style = [fsBold]
     ParentColor = False
@@ -134,10 +130,10 @@ object MainForm: TMainForm
     AnchorSideLeft.Side = asrCenter
     AnchorSideTop.Control = TipLabel
     AnchorSideTop.Side = asrBottom
-    Left = 121
-    Height = 19
-    Top = 132
-    Width = 78
+    Left = 124
+    Height = 17
+    Top = 131
+    Width = 72
     BorderSpacing.Top = 4
     Caption = '&Play sound'
     TabOrder = 2

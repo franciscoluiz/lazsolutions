@@ -29,7 +29,7 @@ type
     procedure BottomLeftSpeedButtonClick(Sender: TObject);
   private
     FBitmap: TBitmap;
-    FTheme: TBitmap;
+    FTheme: TGraphic;
   public
     constructor Create(TheOwner: TComponent); override;
     destructor Destroy; override;
@@ -59,7 +59,7 @@ begin
   FBitmap := TBitmap.Create;
   FTheme := TBitmap.Create;
   ImageList.GetBitmap(0, FBitmap);
-  ThemeImageList.GetBitmap(0, FTheme);
+  ThemeImageList.GetBitmap(0, FTheme as TBitmap);
 end;
 
 destructor TMainForm.Destroy;

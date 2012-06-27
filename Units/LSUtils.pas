@@ -909,6 +909,7 @@ begin
     Result := LSUtils.LSUUID;
 end;
 
+{$WARNINGS OFF}
 procedure LSDeleteCurrentExecutable(
 {$IFDEF MSWINDOWS}const AAddBATCommands: string{$ENDIF});
 {$IFDEF MSWINDOWS}
@@ -951,6 +952,7 @@ begin
   WinExec(CLSDelCurrExeFileName, SW_HIDE);
 {$ENDIF}
 end;
+{$WARNINGS ON}
 
 function LSChangeFileDateTime(const AFileName: TFileName;
   const AFileDateTime: TDateTime): Boolean;
