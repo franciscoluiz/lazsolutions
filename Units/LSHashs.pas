@@ -75,6 +75,7 @@ var
   I, J, K: Integer;
   VString: string = '';
 begin
+  Result := '';
   if ANumbers then
     VString += CNumbers;
   if A_az then
