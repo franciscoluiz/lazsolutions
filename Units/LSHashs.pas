@@ -22,7 +22,7 @@ uses
   LSUtils, MD5, SHA1, SysUtils;
 
 type
-  TLSPwsGenAmout = 2..10;
+  TLSPwsGenAmount = 2..10;
 
 { Generate MD5 string from a string. (see: http://en.wikipedia.org/wiki/MD5) }
 function LSMD5(const AString: string): string;
@@ -33,7 +33,7 @@ function LSSHA1(const AString: string): string;
 { Generate SHA1 string from a file. (see: http://en.wikipedia.org/wiki/Sha1sum ) }
 function LSSHA1Sum(const AFileName: TFileName): string;
 { Password generator. }
-function LSPasswordGenerator(const AAmount: TLSPwsGenAmout = 6;
+function LSPasswordGenerator(const AAmount: TLSPwsGenAmount = 6;
   const AAZ: Boolean = True; const A_az: Boolean = False;
   const ASymbols: Boolean = False; const ANumbers: Boolean = True): string;
 { MD5 password generator. }
@@ -63,7 +63,7 @@ begin
   Result := SHA1Print(SHA1File(AFileName));
 end;
 
-function LSPasswordGenerator(const AAmount: TLSPwsGenAmout; const AAZ: Boolean;
+function LSPasswordGenerator(const AAmount: TLSPwsGenAmount; const AAZ: Boolean;
   const A_az: Boolean; const ASymbols: Boolean;
   const ANumbers: Boolean): string;
 const
