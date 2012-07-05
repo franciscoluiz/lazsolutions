@@ -5,7 +5,7 @@ unit MainFrm;
 interface
 
 uses
-  Forms, StdCtrls, ExtCtrls, ComCtrls, Dialogs;
+  Forms, StdCtrls, ExtCtrls, ComCtrls, Dialogs, LSControls;
 
 type
 
@@ -13,6 +13,12 @@ type
 
   TMainForm = class(TForm)
     CalcHashButton: TButton;
+    LowerCheck: TCheckBox;
+    UpperCheck: TCheckBox;
+    NumbersCheck: TCheckBox;
+    SymbolsCheck: TCheckBox;
+    PassSizeLabel: TLSLabel;
+    AmountEdit: TLSNumericEdit;
     PassGenButton: TButton;
     ChackPasswordButton: TButton;
     CalcSumButton: TButton;
@@ -24,7 +30,7 @@ type
     MainPageControl: TPageControl;
     MD5SumSHA1SumTabSheet: TTabSheet;
     PasswordTabSheet: TTabSheet;
-    PasswordGeneratorTabSheet1: TTabSheet;
+    PasswordGeneratorTabSheet: TTabSheet;
     MD5SHA1TabSheet: TTabSheet;
     HashTypeRadioGroup: TRadioGroup;
     procedure CalcHashButtonClick(Sender: TObject);
@@ -67,7 +73,11 @@ end;
 
 procedure TMainForm.PassGenButtonClick(Sender: TObject);
 begin
-  PassGenEdit.Text := LSPasswordGenerator;
+  PassGenEdit.Text := LSPasswordGenerator(AmountEdit.AsInteger,
+                                          UpperCheck.Checked,
+                                          LowerCheck.Checked,
+                                          SymbolsCheck.Checked,
+                                          NumbersCheck.Checked);
 end;
 
 procedure TMainForm.ChackPasswordButtonClick(Sender: TObject);
