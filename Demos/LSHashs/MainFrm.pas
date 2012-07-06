@@ -74,10 +74,8 @@ end;
 procedure TMainForm.PassGenButtonClick(Sender: TObject);
 begin
   PassGenEdit.Text := LSPasswordGenerator(AmountEdit.AsInteger,
-                                          UpperCheck.Checked,
-                                          LowerCheck.Checked,
-                                          SymbolsCheck.Checked,
-                                          NumbersCheck.Checked);
+    UpperCheck.Checked, LowerCheck.Checked, SymbolsCheck.Checked,
+    NumbersCheck.Checked);
 end;
 
 procedure TMainForm.ChackPasswordButtonClick(Sender: TObject);
