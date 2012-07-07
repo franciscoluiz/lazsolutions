@@ -20,11 +20,11 @@ object MainForm: TMainForm
     TabOrder = 0
     object MD5SHA1TabSheet: TTabSheet
       Caption = 'MD5/SHA1'
-      ClientHeight = 201
+      ClientHeight = 203
       ClientWidth = 473
       object HashEdit: TEdit
         Left = 28
-        Height = 23
+        Height = 21
         Top = 82
         Width = 272
         TabOrder = 0
@@ -35,9 +35,9 @@ object MainForm: TMainForm
         AnchorSideTop.Control = HashEdit
         AnchorSideTop.Side = asrCenter
         Left = 304
-        Height = 25
+        Height = 23
         Top = 81
-        Width = 75
+        Width = 70
         AutoSize = True
         BorderSpacing.Left = 4
         Caption = '&Calculate'
@@ -49,10 +49,10 @@ object MainForm: TMainForm
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = CalcHashButton
         AnchorSideTop.Side = asrCenter
-        Left = 383
-        Height = 68
-        Top = 59
-        Width = 65
+        Left = 378
+        Height = 64
+        Top = 60
+        Width = 62
         AutoFill = True
         AutoSize = True
         BorderSpacing.Left = 4
@@ -65,8 +65,8 @@ object MainForm: TMainForm
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 50
-        ClientWidth = 61
+        ClientHeight = 46
+        ClientWidth = 58
         ItemIndex = 0
         Items.Strings = (
           'MD5'
@@ -78,17 +78,17 @@ object MainForm: TMainForm
     end
     object MD5SumSHA1SumTabSheet: TTabSheet
       Caption = 'MD5Sum/SHA1Sum'
-      ClientHeight = 201
+      ClientHeight = 203
       ClientWidth = 473
       object SumHashTypeRadioGroup: TRadioGroup
         AnchorSideLeft.Control = CalcSumButton
         AnchorSideLeft.Side = asrBottom
         AnchorSideTop.Control = CalcSumButton
         AnchorSideTop.Side = asrCenter
-        Left = 383
-        Height = 68
-        Top = 59
-        Width = 65
+        Left = 378
+        Height = 64
+        Top = 60
+        Width = 62
         AutoFill = True
         AutoSize = True
         BorderSpacing.Left = 4
@@ -101,8 +101,8 @@ object MainForm: TMainForm
         ChildSizing.ShrinkVertical = crsScaleChilds
         ChildSizing.Layout = cclLeftToRightThenTopToBottom
         ChildSizing.ControlsPerLine = 1
-        ClientHeight = 50
-        ClientWidth = 61
+        ClientHeight = 46
+        ClientWidth = 58
         ItemIndex = 0
         Items.Strings = (
           'MD5'
@@ -113,7 +113,7 @@ object MainForm: TMainForm
       end
       object SumEdit: TEdit
         Left = 28
-        Height = 23
+        Height = 21
         Top = 82
         Width = 272
         ReadOnly = True
@@ -125,9 +125,9 @@ object MainForm: TMainForm
         AnchorSideTop.Control = SumEdit
         AnchorSideTop.Side = asrCenter
         Left = 304
-        Height = 25
+        Height = 23
         Top = 81
-        Width = 75
+        Width = 70
         AutoSize = True
         BorderSpacing.Left = 4
         Caption = '&Calculate'
@@ -136,12 +136,12 @@ object MainForm: TMainForm
       end
     end
     object PasswordTabSheet: TTabSheet
-      Caption = 'Password'
-      ClientHeight = 201
+      Caption = 'Password tester'
+      ClientHeight = 203
       ClientWidth = 473
       object PasswordEdit: TEdit
         Left = 148
-        Height = 23
+        Height = 21
         Top = 83
         Width = 104
         TabOrder = 0
@@ -153,9 +153,9 @@ object MainForm: TMainForm
         AnchorSideTop.Control = PasswordEdit
         AnchorSideTop.Side = asrCenter
         Left = 256
-        Height = 25
+        Height = 23
         Top = 82
-        Width = 76
+        Width = 72
         AutoSize = True
         BorderSpacing.Left = 4
         Caption = '&Password'
