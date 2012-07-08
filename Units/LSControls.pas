@@ -3191,6 +3191,8 @@ begin
   if FLabelType <> AValue then
   begin
     FLabelType := AValue;
+    if AValue <> ltLabel then
+      SetCursor(crHandPoint);
     UpdateHighlightColor;
     UpdateCaption;
   end;
@@ -3396,18 +3398,12 @@ end;
 
 procedure TLSCustomLabel.UpdateHighlightColor;
 begin
-  if FLabelType = ltLabel then
-  begin
-    ParentFont := True;
-    Cursor := crDefault;
-  end
-  else
+  if FLabelType <> ltLabel then
   begin
     if FIsVisitedURL then
       Font.Color := FVisitedURLColor
     else
       Font.Color := FHighlightColor;
-    Cursor := crHandPoint;
   end;
 end;
 
