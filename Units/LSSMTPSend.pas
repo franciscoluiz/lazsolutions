@@ -237,6 +237,7 @@ begin
   FBCCList := TStringList.Create;
   FMessage := TStringList.Create;
   FAttached := TStringList.Create;
+  FAttempt := CLSHTTPSendAttempts;
   FPriority := MP_unknown;
   FConfirmReading := False;
   FDebugMode := False;
@@ -336,7 +337,7 @@ begin
   FMessage := TStringList.Create;
   FCCList := TStringList.Create;
   FFrom := '';
-  FAttempt := 3;
+  FAttempt := CLSHTTPSendAttempts;
 end;
 
 destructor TLSSendMailConnection.Destroy;
