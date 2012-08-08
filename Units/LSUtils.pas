@@ -92,9 +92,9 @@ function LSGlobalFindAtom(const AAtomName: string): Boolean;
   E.g.: From <img src="cid:MyImage.png"> To <img src="MyImage.png"> }
 function LSRemoveCid(const AHTML: string): string;
 { Stream to base64 string (see: http://en.wikipedia.org/wiki/Base64) }
-function LSStreamToBase64Str(var AStream: TStream): string;
+function LSStreamToBase64Str(AStream: TStream): string;
 { Base64 string to stream. }
-procedure LSBase64StrToStream(const ABase64Str: string; var AStream: TStream);
+procedure LSBase64StrToStream(const ABase64Str: string; AStream: TStream);
 { File to base64 string. }
 function LSFileToBase64Str(const AFileName: TFileName): string;
 { Base64 string to file. }
@@ -581,7 +581,7 @@ begin
     rfReplaceAll]);
 end;
 
-function LSStreamToBase64Str(var AStream: TStream): string;
+function LSStreamToBase64Str(AStream: TStream): string;
 var
   VOutStream: TStringStream;
   VDecoder: TBase64DecodingStream;
@@ -601,7 +601,7 @@ begin
   end;
 end;
 
-procedure LSBase64StrToStream(const ABase64Str: string; var AStream: TStream);
+procedure LSBase64StrToStream(const ABase64Str: string; AStream: TStream);
 var
   VInStream: TStringStream;
   VDecoder: TBase64DecodingStream;
