@@ -584,18 +584,18 @@ end;
 function LSStreamToBase64Str(AStream: TStream): string;
 var
   VOutStream: TStringStream;
-  VDecoder: TBase64DecodingStream;
+  VEncoder: TBase64EncodingStream;
 begin
   VOutStream := TStringStream.Create('');
   try
-    VDecoder := TBase64DecodingStream.Create(AStream, bdmMIME);
+    AStream.Position := 0;
+    VEncoder := TBase64EncodingStream.Create(VOutStream);
     try
-       VOutStream.CopyFrom(VDecoder, VDecoder.Size);
-       VOutStream.Position := 0;
-       Result := VOutStream.ReadString(VOutStream.Size);
+      VEncoder.CopyFrom(AStream, AStream.Size);
     finally
-      VDecoder.Free;
+      VEncoder.Free;
     end;
+    Result := VOutStream.DataString;
   finally
     VOutStream.Free;
   end;
