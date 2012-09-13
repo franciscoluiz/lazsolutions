@@ -2088,6 +2088,7 @@ type
   published
     property About stored False;
     property Align;
+    property Alignment;
     property Anchors;
     property AutoSelect;
     property AutoSkipe default False;
@@ -2484,6 +2485,7 @@ type
   published
     property About stored False;
     property Align;
+    property Alignment;
     property Anchors;
     property AutoButtonClick default False;
     property AutoSelect;
@@ -3842,6 +3844,7 @@ begin
 {$ELSE}
   FPlaceHolderFrame.Color := Color;
 {$ENDIF}
+  FPlaceHolderFrame.Alignment := Alignment;
   FPlaceHolderFrame.Font.Color := FPlaceHolderColor;
   FPlaceHolderFrame.Font.Name := Font.Name;
   FPlaceHolderFrame.Font.Size := Font.Size;
@@ -4283,6 +4286,7 @@ begin
   if not Assigned(FPlaceHolderFrame) then
     FPlaceHolderFrame := TLSPlaceHolder.Create(Self);
   AdjustPlaceHolderPosition;
+  FPlaceHolderFrame.Alignment := Alignment;
   FPlaceHolderFrame.Caption := FPlaceHolder;
   FPlaceHolderFrame.Parent := Parent;
   FPlaceHolderFrame.Color := Color;
@@ -6217,6 +6221,7 @@ begin
 {$ELSE}
   FPlaceHolderFrame.Color := Color;
 {$ENDIF}
+  FPlaceHolderFrame.Alignment := Alignment;
   FPlaceHolderFrame.Font.Color := FPlaceHolderColor;
   FPlaceHolderFrame.Font.Name := Font.Name;
   FPlaceHolderFrame.Font.Size := Font.Size;
