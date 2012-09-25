@@ -1145,7 +1145,7 @@ var
 begin
   VHint := AControl.FindComponent(CLSUtilsHintName) as THintWindow;
   if Assigned(VHint) then
-    VHint.Free;
+    FreeAndNil(VHint);
 end;
 {$ENDIF}
 
