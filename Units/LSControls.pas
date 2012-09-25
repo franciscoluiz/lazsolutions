@@ -4105,7 +4105,7 @@ procedure TLSCustomMemo.CMEnabledChanged(var AMessage: TLMessage);
 begin
   if not (csDesigning in ComponentState) then
   begin
-    if (Text = '') and IsPlaceHolderApplicable then
+    if (Lines.Count = 0) and IsPlaceHolderApplicable then
     begin
       FPlaceHolderFrame.Enabled := Enabled;
       if Enabled then
@@ -4121,13 +4121,13 @@ procedure TLSCustomMemo.CMTextChanged(var AMessage: TLMessage);
 begin
   if csDesigning in ComponentState then
   begin
-    if (FPlaceHolder <> '') and (Text = '') then
+    if (FPlaceHolder <> '') and (Lines.Count = 0) then
       ShowPlaceHolder
     else
       HidePlaceHolder;
   end
   else
-    if (FPlaceHolder <> '') and (Length(Text) > 0) then
+    if (FPlaceHolder <> '') and (Lines.Count > 0) then
       HidePlaceHolder;
   inherited;
 end;
@@ -4210,7 +4210,7 @@ begin
     FPlaceHolder := AValue;
     if csDesigning in ComponentState then
     begin
-      if (AValue <> '') and (Text = '') then
+      if (AValue <> '') and (Lines.Count = 0) then
       begin
         ShowPlaceHolder;
         FPlaceHolderFrame.Caption := AValue;
@@ -4411,7 +4411,7 @@ end;
 procedure TLSCustomMemo.ParentFormHandleInitialized;
 begin
   inherited;
-  if (FPlaceHolder <> '') and (Text = '') then
+  if (FPlaceHolder <> '') and (Lines.Count = 0) then
     ShowPlaceHolder;
 end;
 
@@ -4464,7 +4464,7 @@ end;
 
 procedure TLSCustomMemo.CMEnter(var AMessage: TLMessage);
 begin
-  if (FPlaceHolder <> '') and (Text = '') then
+  if (FPlaceHolder <> '') and (Lines.Count = 0) then
     HidePlaceHolder;
   if (FFocusColor <> clNone) and (not FIsFocusColorShowed) and
     (not FIsValidationColorShowed) then
@@ -4478,7 +4478,7 @@ end;
 
 procedure TLSCustomMemo.CMExit(var AMessage: TLMessage);
 begin
-  if (FPlaceHolder <> '') and (Text = '') then
+  if (FPlaceHolder <> '') and (Lines.Count = 0) then
     ShowPlaceHolder;
   if (FValidationType = vtExit) or (FValidationType = vtKeyPress) then
   begin
