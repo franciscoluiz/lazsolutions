@@ -4339,8 +4339,10 @@ function TLSCustomMemo.InternalValidate(const ACanFocus: Boolean): Boolean;
     end;
     if CanFocus then
     begin
-      if ACanFocus{$IF DEFINED(MSWINDOWS) OR DEFINED(LCLQt)}and
-        (FValidationType <> vtEditingDone){$ENDIF}then
+      if ACanFocus
+{$IF DEFINED(LCLQt) OR DEFINED(MSWINDOWS)}and
+        (FValidationType <> vtEditingDone)
+{$ENDIF}then
         SetFocus;
       if FShowValidationHint then
       begin
