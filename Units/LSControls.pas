@@ -3892,7 +3892,9 @@ function TLSCustomEdit.InternalValidate(const ACanFocus: Boolean): Boolean;
     if CanFocus then
     begin
       if ACanFocus
-        {$IFDEF LCLQt}and (FValidationType <> vtEditingDone){$ENDIF}then
+{$IF DEFINED(LCLQt) OR DEFINED(MSWINDOWS)}and
+        (FValidationType <> vtEditingDone)
+{$ENDIF}then
         SetFocus;
       if FShowValidationHint then
       begin

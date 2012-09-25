@@ -58,6 +58,11 @@ function LSGeoIPLookupCountry(const AIP: ShortString): TGeoIPCountry;
 var
   VGeoIP: TGeoIP;
 begin
+  with Result do
+  begin
+    CountryCode := '';
+    CountryName := '';
+  end;
   VGeoIP := TGeoIP.Create(CLSGeoIPCountryDATFileName);
   try
     if not (VGeoIP.GetCountry(AIP, Result) = GEOIP_SUCCESS) then
@@ -75,6 +80,18 @@ function LSGeoIPLookupCity(const AIP: ShortString): TGeoIPCity;
 var
   VGeoIP: TGeoIP;
 begin
+  with Result do
+  begin
+    CountryCode := '';
+    CountryName := '';
+    Region := '';
+    City := '';
+    PostalCode := '';
+    Latitude := 0;
+    Longitude := 0;
+    DmaCode := 0;
+    AreaCode := 0;
+  end;
   VGeoIP := TGeoIP.Create(CLSGeoIPCityDATFileName);
   try
     if not (VGeoIP.GetCity(AIP, Result) = GEOIP_SUCCESS) then
