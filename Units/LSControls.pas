@@ -1504,8 +1504,10 @@ type
     FExpand: Boolean;
     FExpandPic: TPicture;
     FCollapsePic: TPicture;
+    function IsStoredOldTopPanelHeight: Boolean;
     procedure SetExpand(const AValue: Boolean);
   protected
+    procedure UpdateSize(const AExpanded: Boolean);
     procedure DoChangePic(ASender: TObject); virtual;
     procedure DoButtonClick(ASender: TObject); virtual;
     class function GetControlClassDefaultSize: TSize; override;
@@ -1518,6 +1520,8 @@ type
     property ExpandPic: TPicture read FExpandPic write FExpandPic;
     property CollapsePic: TPicture read FCollapsePic write FCollapsePic;
     property TopPanel: TLSTopPanel read FTopPanel default nil;
+    property OldTopPanelHeight: Integer read FOldTopPanelHeight
+      write FOldTopPanelHeight stored IsStoredOldTopPanelHeight;
     property OnButtonClick: TNotifyEvent read FOnButtonClick
       write FOnButtonClick;
   end;
@@ -2944,6 +2948,7 @@ type
     property TopPanel default nil;
     property UseDockManager default True;
     property Visible;
+    property OldTopPanelHeight stored True;
     property OnClick;
     property OnButtonClick;
     property OnContextPopup;
@@ -8443,15 +8448,25 @@ begin
   if AValue <> FExpand then
   begin
     FExpand := AValue;
-    if FExpand then
-      Height := FOldTopPanelHeight
-    else
-    begin
-      FOldTopPanelHeight := Height;
-      Height := FTopPanel.BoundsRect.Bottom + BorderWidth + BevelWidth;
-    end;
-    DoChangePic(Self);
+    UpdateSize(FExpand);
   end;
+end;
+
+procedure TLSCustomExpandPanel.UpdateSize(const AExpanded: Boolean);
+begin
+  if AExpanded then
+    Height := FOldTopPanelHeight
+  else
+  begin
+    FOldTopPanelHeight := Height;
+    Height := FTopPanel.BoundsRect.Bottom + BorderWidth + BevelWidth + 1;
+  end;
+  DoChangePic(Self);
+end;
+
+function TLSCustomExpandPanel.IsStoredOldTopPanelHeight: Boolean;
+begin
+  Result := not FExpand;
 end;
 
 {$HINTS OFF}
